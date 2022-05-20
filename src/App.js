@@ -1,14 +1,13 @@
 import './App.css';
 import { useRef } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import leftMountain from "./assets/leftMountain.png";
-import rightMountain from "./assets/rightMountain.png";
-import rightTrees from "./assets/rightTrees.png";
-import leftTrees from "./assets/leftTrees.png";
-// import treeline from "./assets/treeline.png";
+import Stars from "./components/Stars/Stars";
+import Welcome from './components/Welcome';
+import imagesObj from './groups/imagesObj';
 
 function App() {
   const ref = useRef()
+  const { leftMountain, rightMountain, leftTrees, rightTrees } = imagesObj
 
   return (
     <div className="App">
@@ -25,13 +24,8 @@ function App() {
             }}
             
           >
-            <div className='stars'>
-              <div id="stars"></div>
-              <div id="stars2"></div>
-              <div id="stars3"></div>
-            </div>
-            <h2>Welcome to my Portfolio</h2>
-            <h4>Scroll ▼</h4>
+            <Stars />
+            <Welcome />
 
         </ParallaxLayer>
         
