@@ -20,3 +20,25 @@
   -ms-filter: "FlipH";
 }
 
+.dropdown {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+#acorns {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modaling {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
