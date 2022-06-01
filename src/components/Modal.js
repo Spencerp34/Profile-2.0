@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import { Modal, Box, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import playroom from "../assets/acornsSnap.png";
@@ -6,7 +6,12 @@ import playroom from "../assets/acornsSnap.png";
 export default function DisplayModal(props){
     // const [category, setCategory] = useState("");
     // const [subCategory, setSubCategory] = useState("");
-    const {openModal, closeModal} = props;
+    const [opacity, setOpacity] = useState(0)
+    const {setTreesOpen} = props;
+    const closeModal = () => {setTreesOpen(false)}
+    const openModal = () => {setTreesOpen(true)}
+
+    setTimeout(() => {setOpacity(1)}, 1000);
 
     return (
         <Modal
@@ -16,6 +21,8 @@ export default function DisplayModal(props){
                 padding: "5px 8px",
                 marginTop: "25vh",
                 marginLeft: "35vh",
+                opacity: opacity,
+                transition: "4s",
             }}
         >
             <Box
