@@ -1,7 +1,7 @@
 import './App.css';
 import { useRef, useState } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import imagesObj from './groups/imagesObj';
+import {parralaxObj} from './groups/images';
 import Stars from "./components/Stars/Stars";
 import Welcome from './components/Welcome';
 import styled from "styled-components";
@@ -27,7 +27,7 @@ const TestStyledDiv = styled.div`
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
   const ref = useRef()
-  const { leftMountain, rightMountain, leftTrees, rightTrees } = imagesObj;
+  const { leftMountain, rightMountain, leftTrees, rightTrees } = parralaxObj;
 
   return (
     <div className="App">
@@ -102,7 +102,7 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.25}
+            offset={1.24}
             factor={0.4}
             speed={1}
           >

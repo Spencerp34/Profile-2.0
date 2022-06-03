@@ -28,9 +28,10 @@ const Category = (props) => {
         <CategoryDiv>
             <div className="category-selection">
                 {options.map((option) => {
+                    const index = options.indexOf(option)
                     return(
-                        <div  className={ category === option.Short ? "underlined categoryTitle" : "categoryTitle"} onClick={()=>setCategory(option.Short)} key={option.Short} >
-                            {option.Short}
+                        <div className={ category === index ? "underlined categoryTitle" : "categoryTitle"} onClick={()=>setCategory(index)} key={option.short} >
+                            {option.short}
                         </div>
                     )
                 })}
