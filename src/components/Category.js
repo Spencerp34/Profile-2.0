@@ -10,13 +10,23 @@ const CategoryDiv = styled.div`
     }
 
     .categoryTitle{
+        border: 1px solid black;
         padding: 10px;
         font-weight: bold;
-        margin-bottom: 20px;
+        margin-bottom: 18px;
+        transition: 0.3s;
+        border-radius: 5px;
+    }
+    .categoryTitle:hover{
+        color: #161E23;
+        border: 1px solid #161E23;
+        margin: 0, 0, 20, 0;
+        transition: 0.3s;
     }
 
     .underlined{
         text-decoration: underline;
+        background-color: #cccccc
     }
 `
 

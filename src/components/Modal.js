@@ -28,7 +28,7 @@ export default function DisplayModal(props){
             <Box
                 sx={{
                     width: "80%",
-                    height: "60%",
+                    height: "70%",
                     borderRadius: "8px",
                     bgcolor: "rgba(196, 196, 196, 0.3)",
                     boxShadow: 24,
@@ -50,9 +50,6 @@ export default function DisplayModal(props){
                     <Category category={category} setCategory={setCategory} />
                     <Details category={category} setCategory={setCategory} />
                 </div>
-                
-                
-
             </Box>
 
         </Modal>
