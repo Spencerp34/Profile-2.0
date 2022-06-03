@@ -11,6 +11,22 @@ const DetailsDiv = styled.div`
     .thumbnail{
         width: 50%;
     }
+
+    .description{
+        display: flex;
+        justify-content: space-evenly;
+        height: 30%;
+    }
+
+    h5{
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    h6{
+        font-size: 1rem;
+        margin: 0;
+    }
 `
 const Details = (props) => {
     const {category} = props;

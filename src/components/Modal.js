@@ -19,15 +19,15 @@ export default function DisplayModal(props){
             onClose={closeModal}
             sx={{
                 padding: "5px 8px",
-                marginTop: "25vh",
-                marginLeft: "35vh",
+                marginTop: "15vh",
+                marginLeft: "11vw",
                 opacity: opacity,
                 transition: "4s",
             }}
         >
             <Box
                 sx={{
-                    width: "70%",
+                    width: "80%",
                     height: "60%",
                     borderRadius: "8px",
                     bgcolor: "rgba(196, 196, 196, 0.3)",
