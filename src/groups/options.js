@@ -1,15 +1,23 @@
+import { thumbnailsObj } from "../groups/images.js";
+
 const options = [
     {
-        Short: "Preschool",
+        short: "Preschool",
         Name: "Little Acorns",
+        strengths: "Mobile optimization, image carousels, form page.",
+        thumbnailImg: thumbnailsObj.littleAcornsThumbnail,
     },
     {
-        Short: "Resturaunt",
+        short: "Resturaunt",
         Name: "Midnight Snax",
+        strengths: "Full stack with API calls to backend, mapping over arrays of data.",
+        thumbnailImg: thumbnailsObj.midnightSnaxThumbnail,
     },
     {
-        Short: "Merch Store",
+        short: "Merch Store",
         Name: "Pyramid Planet",
+        strengths: "Three.js 3D environment, computer generated stars, shopping cart for merch.",
+        thumbnailImg: thumbnailsObj.pyramidPlanetThumbnail,
     },
 ]
 

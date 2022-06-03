@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Modal, Box, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import playroom from "../assets/acornsSnap.png";
 import Category from "./Category";
+import Details from "./Details";
 
 export default function DisplayModal(props){
-    const [category, setCategory] = useState("Preschool");
-    // const [subCategory, setSubCategory] = useState("");
+    const [category, setCategory] = useState(0);
     const [opacity, setOpacity] = useState(0)
     const {setTreesOpen} = props;
     const closeModal = () => {setTreesOpen(false)}
@@ -49,13 +48,7 @@ export default function DisplayModal(props){
                 </Button>
                 <div className="modaling">
                     <Category category={category} setCategory={setCategory} />
-                    <div className="body">
-                        <img src={playroom} id="acorns" alt={"playroom"}></img>
-                    </div>
-                    <div className="description">
-                        <h5>Visit this site to see:</h5>
-                        <h6>Photo Carosels, form inquiries, home business</h6>
-                    </div>
+                    <Details category={category} setCategory={setCategory} />
                 </div>
                 
                 
