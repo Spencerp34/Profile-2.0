@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Modal, Box, Button } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import playroom from "../assets/acornsSnap.png";
+import Category from "./Category";
 
 export default function DisplayModal(props){
-    // const [category, setCategory] = useState("");
+    const [category, setCategory] = useState("Preschool");
     // const [subCategory, setSubCategory] = useState("");
     const [opacity, setOpacity] = useState(0)
     const {setTreesOpen} = props;
@@ -47,11 +48,7 @@ export default function DisplayModal(props){
                     <CloseIcon />
                 </Button>
                 <div className="modaling">
-                    <div className="dropdown">
-                        <h4><u>Preschool</u></h4>
-                        <h4>Resturaunt</h4>
-                        <h4>Merch Store</h4>
-                    </div>
+                    <Category category={category} setCategory={setCategory} />
                     <div className="body">
                         <img src={playroom} id="acorns" alt={"playroom"}></img>
                     </div>
