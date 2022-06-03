@@ -10,7 +10,13 @@ const Content = (props) => {
                 ?   <div className="modal">
                         <DisplayModal  {...props} />
                     </div>
-                : <Button className="button" onClick={() => setTreesOpen(true)}>Projects</Button>
+                :   <Button 
+                        className="button" 
+                        onClick={() => setTreesOpen(true)}
+                        variant="contained"
+                    >
+                        See My Projects
+                    </Button>
             }
         </div>
     )

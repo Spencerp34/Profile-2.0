@@ -2,6 +2,13 @@ import styled from "styled-components";
 import options from "../groups/options.js";
 
 const DetailsDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+    height: 30vh;
+
     .image{
         display: flex;
         justify-content: center;
@@ -20,7 +27,7 @@ const DetailsDiv = styled.div`
 
     h5{
         font-size: 1.3rem;
-        margin: 0;
+        margin: 5;
     }
 
     h6{
@@ -33,9 +40,10 @@ const Details = (props) => {
     
     return(
         <DetailsDiv>
-            <div className="image">
+            <h5>Click image to visit the deployed website</h5>
+            <a target="_blank" className='image' href={options[category].url} rel="noreferrer" >
                 <img src={options[category].thumbnailImg} alt={options[category].short} className={"thumbnail"} />
-            </div>
+            </a>
             <div className="description">
                 <h5>Visit this site to see:</h5>
                 <h6>{options[category].strengths}</h6>
