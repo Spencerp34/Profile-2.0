@@ -15,8 +15,8 @@ const WelcomeDiv = styled.div`
         margin-top: -60px;
         padding-left: 10px;
         background: -webkit-linear-gradient(white, #38495a);
-        -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
     }
   
     h4 {
