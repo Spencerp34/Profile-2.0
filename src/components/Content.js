@@ -1,32 +1,48 @@
 import DisplayModal from './Modal';
 import styled from "styled-components";
+import {styles} from "../groups/constants";
 
 const ContentDiv = styled.div`
+    .project-title {
+        ${styles.primaryText}
+    }
+
+    .primaryWhite{
+        ${styles.primaryText}
+    }
+
     .project-title{
-        position: absolute;
         bottom: 0%;
         right: 40%;
-        color: #fff;
         text-align: center;
-        font-family: Lato;
-        font-weight: 300;
-        font-size: 50px;
         letter-spacing: 10px;
         margin-top: -60px;
         padding-left: 10px;
-        background: -webkit-linear-gradient(white, #38495a);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         text-decoration: underline;
     }
     .project-title:hover {
         text-decoration: underline;
+    }
+    .right{
+        top: 50%;
+        right: 2%;
+    }
+    .left{
+        top: 50%;
+        left: 2%
     }
     
 `
 
 const Content = (props) => {
     const {treesOpen, setTreesOpen} = props
+    const handleLeft = () => {
+        console.log("going left")
+    }
+    const handleRight = () => {
+        console.log("going right")
+    }
 
     return(
         <ContentDiv>
@@ -35,12 +51,26 @@ const Content = (props) => {
                         <DisplayModal  {...props} />
                     </div>
                 :   
-                    <div 
-                        className="project-title" 
-                        onClick={() => setTreesOpen(true)}
-                    >
-                        See My Projects
-                    </div>
+                    <section className="navigation-arrows">
+                        <div 
+                            className="left primaryWhite"
+                            onClick={() => handleLeft()}
+                        >
+                                ◀
+                        </div>
+                        <div 
+                            className="project-title primaryWhite" 
+                            onClick={() => setTreesOpen(true)}
+                        >
+                            See My Projects ▼
+                        </div>
+                        <div 
+                            className="right primaryWhite"
+                            onClick={() => handleRight()}
+                        >
+                            ▶
+                        </div>
+                    </section>
             }
         </ContentDiv>
     )
