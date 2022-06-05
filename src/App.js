@@ -43,6 +43,7 @@ function App() {
               style={{
                 backgroundColor: "transparent",
               }}
+              onClick={() => ref.current.scrollTo(2)}
             >
               <Stars />
               <Welcome />
@@ -102,7 +103,7 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.25}
+            offset={1.24}
             factor={0.4}
             speed={1}
           >
