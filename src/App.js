@@ -6,6 +6,7 @@ import Stars from "./components/Stars/Stars";
 import Welcome from './components/Welcome';
 import styled from "styled-components";
 import Content from './components/Content';
+import NavigationArrows from './components/NavigationArrows';
 
 const TestStyledDiv = styled.div`
   .no-slide{
@@ -27,6 +28,11 @@ const TestStyledDiv = styled.div`
     transition 2s;
     transform: translateX(100%)
   }
+
+  .ultra-left{
+    transition 2s;
+    transform: translateX(-100%)
+  }
 `
 
 function App() {
@@ -40,9 +46,9 @@ function App() {
       case "Projects": 
         return "no-slide"
       case "Cave":
-        return "ultra-right"
-      case "Lake":
         return "ultra-left"
+      case "Lake":
+        return "ultra-right"
       default: 
         return "no-slide"
     }
@@ -110,7 +116,7 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: "radial-gradient(red, #131321, #131321, #131321)"
+              background: `radial-gradient(${focus === "Projects" ? "red" : "#131321"}, #131321, #131321, #131321)`
             }}
             
           >
@@ -134,12 +140,19 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.24}
-            factor={0.4}
-            speed={1}
+            offset={1.5}
+            factor={0.5}
+            speed={0.5}
           >
-            <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} setFocus={setFocus} />
+            <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} setFocus={setFocus} focus={focus} />
             
+          </ParallaxLayer>
+          <ParallaxLayer
+              offset={1.25}
+              factor={0.75}
+              speed={1.2}
+            >
+              <NavigationArrows setFocus={setFocus} />
           </ParallaxLayer>
         </TestStyledDiv>
       
