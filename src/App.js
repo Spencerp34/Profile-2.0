@@ -22,12 +22,43 @@ const TestStyledDiv = styled.div`
     transition: 2s;
     transform: translate(20%, 20%);
   }
+
+  .ultra-right{
+    transition 2s;
+    transform: translateX(100%)
+  }
 `
 
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
+  const [focus, setFocus] = useState("Projects");
   const ref = useRef()
   const { leftMountain, rightMountain, leftTrees, rightTrees } = parralaxObj;
+
+  const focusClasses = (focusState) => {
+    switch (focusState) {
+      case "Projects": 
+        return "no-slide"
+      case "Cave":
+        return "ultra-right"
+      case "Lake":
+        return "ultra-left"
+      default: 
+        return "no-slide"
+    }
+  }
+
+  const slideLeft = (treesOpenState) => {
+    if(treesOpenState){
+      return "slide-left"
+    }
+  }
+
+  const slideRight = (treesOpenState) => {
+    if(treesOpenState){
+      return "slide-right"
+    }
+  }
 
   return (
     <div className="App">
@@ -91,7 +122,7 @@ function App() {
             factor={1.0}
             speed={0.15}
           >
-            <img src={leftTrees} alt="leftTrees." width={"100%"} className={!treesOpen ? 'no-slide' : "slide-left"} />
+            <img src={leftTrees} alt="leftTrees." width={"100%"} className={(`${focusClasses(focus)} ${slideLeft(treesOpen)}`)} />
           </ParallaxLayer>
         
           <ParallaxLayer
@@ -99,7 +130,7 @@ function App() {
             factor={1.2}
             speed={0.25}            
           >
-            <img src={rightTrees} alt="rightTrees" width={"100%"} className={!treesOpen ? 'no-slide' : "slide-right"} />
+            <img src={rightTrees} alt="rightTrees" width={"100%"} className={(`${focusClasses(focus)} ${slideRight(treesOpen)}`) } />
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -107,7 +138,7 @@ function App() {
             factor={0.4}
             speed={1}
           >
-            <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
+            <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} setFocus={setFocus} />
             
           </ParallaxLayer>
         </TestStyledDiv>
