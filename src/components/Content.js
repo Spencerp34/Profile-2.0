@@ -12,7 +12,7 @@ const ContentDiv = styled.div`
     }
 
     .project-title{
-        bottom: -20%;
+        bottom: 40%;
         right: 40%;
         text-align: center;
         letter-spacing: 10px;
