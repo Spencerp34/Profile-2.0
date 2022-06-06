@@ -1,5 +1,5 @@
 import './App.css';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
 import {parralaxObj} from './groups/images';
 import Stars from "./components/Stars/Stars";
@@ -37,9 +37,11 @@ const TestStyledDiv = styled.div`
 
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
+  const [prevFocus, setPrevFocus] = useState();
   const [focus, setFocus] = useState(1);
   const ref = useRef()
   const { leftMountain, rightMountain, leftTrees, rightTrees } = parralaxObj;
+  const [redSun, setRedSun] = useState(true)
 
   const focusClasses = (focusState) => {
     switch (focusState) {
@@ -53,6 +55,28 @@ function App() {
         return "no-slide"
     }
   }
+
+  const changeFocusState = (intiger) => {
+    setPrevFocus(focus)
+    setFocus(intiger)
+  }
+
+
+  useEffect(()=>{
+    if(prevFocus === undefined){
+      setRedSun(true);
+    }else if(prevFocus === 1 && focus === 2){
+      console.log('2nd')
+      setTimeout(() => {setRedSun(false)}, 500);
+    }else if(prevFocus === 0 && focus === 1){
+      setTimeout(() => {setRedSun(true)}, 1500);
+    }else if(prevFocus === 2 && focus === 1){
+      setTimeout(() => {setRedSun(true)}, 1500);
+    }else if (prevFocus === 1 && focus === 0){
+      console.log('4th')
+      setTimeout(() => {setRedSun(false)}, 500);
+    }
+  }, [focus, prevFocus])
 
   const slideLeft = (treesOpenState) => {
     if(treesOpenState){
@@ -116,7 +140,7 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: `radial-gradient(${focus === 1 ? "red" : "#131321"}, #131321, #131321, #131321)`
+              background: `radial-gradient(${redSun ? "red" : "#131321"}, #131321, #131321, #131321)`
             }}
             
           >
@@ -144,8 +168,11 @@ function App() {
               factor={0.75}
               speed={1.2}
             >
-              <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} setFocus={setFocus} focus={focus} />
-              <NavigationArrows focus={focus} setFocus={setFocus} />
+              {focus === 1 
+                ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
+                : null
+              }              
+              <NavigationArrows focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </TestStyledDiv>
       
