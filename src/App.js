@@ -37,17 +37,17 @@ const TestStyledDiv = styled.div`
 
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
-  const [focus, setFocus] = useState("Projects");
+  const [focus, setFocus] = useState(1);
   const ref = useRef()
   const { leftMountain, rightMountain, leftTrees, rightTrees } = parralaxObj;
 
   const focusClasses = (focusState) => {
     switch (focusState) {
-      case "Projects": 
+      case 1: 
         return "no-slide"
-      case "Cave":
+      case 2:
         return "ultra-left"
-      case "Lake":
+      case 0:
         return "ultra-right"
       default: 
         return "no-slide"
@@ -116,7 +116,7 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: `radial-gradient(${focus === "Projects" ? "red" : "#131321"}, #131321, #131321, #131321)`
+              background: `radial-gradient(${focus === 1 ? "red" : "#131321"}, #131321, #131321, #131321)`
             }}
             
           >
@@ -140,19 +140,12 @@ function App() {
           </ParallaxLayer>
 
           <ParallaxLayer
-            offset={1.5}
-            factor={0.5}
-            speed={0.5}
-          >
-            <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} setFocus={setFocus} focus={focus} />
-            
-          </ParallaxLayer>
-          <ParallaxLayer
               offset={1.25}
               factor={0.75}
               speed={1.2}
             >
-              <NavigationArrows setFocus={setFocus} />
+              <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} setFocus={setFocus} focus={focus} />
+              <NavigationArrows focus={focus} setFocus={setFocus} />
           </ParallaxLayer>
         </TestStyledDiv>
       

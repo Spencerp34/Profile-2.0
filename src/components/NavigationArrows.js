@@ -6,40 +6,73 @@ const NavigationArrowsDiv = styled.div`
         ${styles.primaryText}
     }
     .right{
-        top: 50%;
         right: 2%;
     }
     .left{
-        top: 50%;
         left: 2%
     }    
 `
 
 const NavigationArrows = (props) => {
-    const {setFocus} = props
+
+    const {focus, setFocus} = props
     const handleLeft = () => {
-        setFocus("Lake")
+        setFocus(focus - 1)
     }
     const handleRight = () => {
-        setFocus("Cave")
+        setFocus(focus + 1)
     }
+
+    const jsx = (focusState) => {
+        if(focusState === 0){
+            return(
+                <section className="navigation-arrows">
+                    <div 
+                        className="right primaryWhite"
+                        onClick={() => handleRight()}
+                    >
+                        ▶
+                    </div>
+                </section>
+            )
+        }else if ( focus === 2){
+            return(
+                <section className="navigation-arrows">
+                    <div 
+                        className="left primaryWhite"
+                        onClick={() => handleLeft()}
+                    >
+                            ◀
+                    </div> 
+                </section>
+                
+            )
+        }else{
+            return(
+                <section className="navigation-arrows">
+                    <div 
+                        className="left primaryWhite"
+                        onClick={() => handleLeft()}
+                    >
+                            ◀
+                    </div>
+                    <div 
+                        className="right primaryWhite"
+                        onClick={() => handleRight()}
+                    >
+                        ▶
+                    </div>
+                </section>
+            )
+        }
+    }
+    
+
+
 
     return(
         <NavigationArrowsDiv>
-            <section className="navigation-arrows">
-                <div 
-                    className="left primaryWhite"
-                    onClick={() => handleLeft()}
-                >
-                        ◀
-                </div>
-                <div 
-                    className="right primaryWhite"
-                    onClick={() => handleRight()}
-                >
-                    ▶
-                </div>
-            </section>
+            {jsx(focus)}
         </NavigationArrowsDiv>
     )
 }
