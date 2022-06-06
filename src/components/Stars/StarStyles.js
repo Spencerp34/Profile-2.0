@@ -8,6 +8,7 @@ const StarsDiv = styled.div`
         position: relative;
         z-index: -1;
         animation: animStar 50s linear infinite;
+        animation-direction: alternate;
         box-shadow:  324px 42px #fff, 303px 586px #fff,
         1312px 276px #fff, 451px 625px #fff, 521px 1931px #fff, 1087px 1871px #fff,
         36px 1546px #fff, 132px 934px #fff, 1698px 901px #fff, 1418px 664px #fff,
@@ -382,6 +383,7 @@ const StarsDiv = styled.div`
         position: relative;
         z-index: -1;
         animation: animStar 100s linear infinite;
+        animation-direction: alternate;
         box-shadow: 1448px 320px #fff, 1775px 1663px #fff, 332px 1364px #fff,
         878px 340px #fff, 569px 1832px #fff, 1422px 1684px #fff, 1946px 1907px #fff,
         121px 979px #fff, 1044px 1069px #fff, 463px 381px #fff, 423px 112px #fff,
@@ -504,6 +506,7 @@ const StarsDiv = styled.div`
         position: relative;
         z-index: -1;
         animation: animStar 150s linear infinte;
+        animation-direction: alternate;
         box-shadow: 387px 1878px #fff, 760px 1564px #fff, 1487px 999px #fff,
         948px 1828px #fff, 1977px 1001px #fff, 1284px 1963px #fff, 656px 284px #fff,
         1268px 1635px #fff, 1820px 598px #fff, 642px 1900px #fff, 296px 57px #fff,
@@ -575,7 +578,7 @@ const StarsDiv = styled.div`
             transform: translate(0px, 0px);
         }
         to {
-            transform: translate(800px, -800px);
+            transform: translate(400px, -400px);
         }
     }
 
