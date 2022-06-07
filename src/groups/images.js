@@ -5,12 +5,16 @@ import leftTrees from "../assets/leftTrees.png";
 import littleAcornsThumbnail from "../assets/littleAcorns.png";
 import midnightSnaxThumbnail from "../assets/midnightSnax.png";
 import pyramidPlanetThumbnail from "../assets/pyramidPlanet.png";
+import chalkboard from "../assets/chalkboard.jpg";
+import caveBoarder from "../assets/caveboarder.png";
 
-const parralaxObj = {
+const parallaxObj = {
     leftMountain,
     rightMountain,
     rightTrees,
     leftTrees,
+    chalkboard,
+    caveBoarder,
 }
 
 const thumbnailsObj = {
@@ -20,6 +24,6 @@ const thumbnailsObj = {
 }
 
 export {
-    parralaxObj,
+    parallaxObj,
     thumbnailsObj,
 }

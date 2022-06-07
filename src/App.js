@@ -1,14 +1,15 @@
 import './App.css';
 import { useRef, useState, useEffect } from 'react';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import {parralaxObj} from './groups/images';
+import {parallaxObj} from './groups/images';
 import Stars from "./components/Stars/Stars";
 import Welcome from './components/Welcome';
 import styled from "styled-components";
 import Content from './components/Content';
 import NavigationArrows from './components/NavigationArrows';
+import Cavewall from './components/Cavewall';
 
-const TestStyledDiv = styled.div`
+const ParallaxStyleDiv = styled.div`
   .no-slide{
     transition: transform 3s;
     transform: translate(0%);
@@ -40,7 +41,7 @@ function App() {
   const [prevFocus, setPrevFocus] = useState();
   const [focus, setFocus] = useState(1);
   const ref = useRef()
-  const { leftMountain, rightMountain, leftTrees, rightTrees } = parralaxObj;
+  const { leftMountain, rightMountain, leftTrees, rightTrees } = parallaxObj;
   const [redSun, setRedSun] = useState(true)
 
   const focusClasses = (focusState) => {
@@ -66,15 +67,13 @@ function App() {
     if(prevFocus === undefined){
       setRedSun(true);
     }else if(prevFocus === 1 && focus === 2){
-      console.log('2nd')
-      setTimeout(() => {setRedSun(false)}, 500);
+      setTimeout(() => {setRedSun(false)}, 300);
     }else if(prevFocus === 0 && focus === 1){
       setTimeout(() => {setRedSun(true)}, 1500);
     }else if(prevFocus === 2 && focus === 1){
       setTimeout(() => {setRedSun(true)}, 1500);
     }else if (prevFocus === 1 && focus === 0){
-      console.log('4th')
-      setTimeout(() => {setRedSun(false)}, 500);
+      setTimeout(() => {setRedSun(false)}, 300);
     }
   }, [focus, prevFocus])
 
@@ -96,7 +95,7 @@ function App() {
         pages={2}
         ref={ref}
         >
-          <TestStyledDiv>
+          <ParallaxStyleDiv>
             <ParallaxLayer
               offset={0}
               factor={1}
@@ -168,13 +167,14 @@ function App() {
               factor={0.75}
               speed={1.2}
             >
-              {focus === 1 
+              {redSun
                 ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
                 : null
-              }              
+              } 
+              <Cavewall focus={focus} />           
               <NavigationArrows focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
-        </TestStyledDiv>
+        </ParallaxStyleDiv>
       
       </Parallax>
     </div>
