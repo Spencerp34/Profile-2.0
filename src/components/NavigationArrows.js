@@ -15,13 +15,14 @@ const NavigationArrowsDiv = styled.div`
 
 const NavigationArrows = (props) => {
 
-    const {focus, changeFocusState} = props
+    const {focus, changeFocusState} = props;
+
     const handleLeft = () => {
         changeFocusState(focus - 1)
-    }
+    };
     const handleRight = () => {
         changeFocusState(focus + 1)
-    }
+    };
 
     const jsx = (focusState) => {
         if(focusState === 0){
