@@ -40,7 +40,7 @@ function App() {
   const [treesOpen, setTreesOpen] = useState(false);
   const [prevFocus, setPrevFocus] = useState();
   const [focus, setFocus] = useState(1);
-  const ref = useRef()
+  const ref = useRef();
   const { leftMountain, rightMountain, leftTrees, rightTrees } = parallaxObj;
   const [redSun, setRedSun] = useState(true)
 
@@ -166,13 +166,14 @@ function App() {
               offset={1.25}
               factor={0.75}
               speed={1.2}
+              onClick={() => ref.current.scrollTo(2)}
             >
               {redSun
                 ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
                 : null
               } 
               <Cavewall focus={focus} />           
-              <NavigationArrows focus={focus} changeFocusState={changeFocusState} />
+              <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>
       
