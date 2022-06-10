@@ -1,7 +1,8 @@
 import {parallaxObj} from '../groups/images';
 import styled from "styled-components";
+import Chalkboard from './Chalkboard';
 
-const {chalkboard, caveBoarder} = parallaxObj;
+const {chalkboard, combinedCave} = parallaxObj;
 
 const CavewallDiv = styled.div`
     .cavewall-div{
@@ -38,7 +39,9 @@ const Cavewall = (props) => {
     return(
         <CavewallDiv>
             <div className={focus === 0 ? "focused" : "cavewall-div"}>
-                <img className="chalkboard" src={caveBoarder} alt="chalkboard" />
+                <div className='chalkboard'>
+                    <Chalkboard />
+                </div>
             </div>  
         </CavewallDiv>
     )
