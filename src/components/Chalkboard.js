@@ -1,5 +1,4 @@
 import {useState, useRef} from 'react';
-import { createRoot } from 'react-dom/client';
 import { Stage, Layer, Line } from 'react-konva';
 
 const Chalkboard = () => {
@@ -33,6 +32,11 @@ const Chalkboard = () => {
     isDrawing.current = false;
   };
 
+  const fullErase = () =>{
+      setLines([])
+  }
+
+
   return (
     <div>
       <select
@@ -41,9 +45,12 @@ const Chalkboard = () => {
           setTool(e.target.value);
         }}
       >
-        <option value="pen">Pen</option>
+        <option value="pen">Chalk</option>
         <option value="eraser">Eraser</option>
       </select>
+      <button onClick={fullErase}>
+          Erase All
+      </button>
       <Stage
         width={window.innerWidth}
         height={window.innerHeight}
@@ -70,8 +77,5 @@ const Chalkboard = () => {
     </div>
   );
 };
-
-const container = document.getElementById('root');
-const root = createRoot(container);
 
 export default Chalkboard
