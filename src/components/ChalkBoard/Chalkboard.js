@@ -1,9 +1,10 @@
 import {useState, useRef} from 'react';
 import { Stage, Layer, Line } from 'react-konva';
+import startingDoodle from './StartingDoodle';
 
 const Chalkboard = () => {
   const [tool, setTool] = useState('pen');
-  const [lines, setLines] = useState([]);
+  const [lines, setLines] = useState(startingDoodle);
   const isDrawing = useRef(false);
 
   const handleMouseDown = (e) => {
@@ -33,7 +34,7 @@ const Chalkboard = () => {
   };
 
   const fullErase = () =>{
-      setLines([])
+    setLines([])
   }
 
 
