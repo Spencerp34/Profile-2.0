@@ -2,7 +2,7 @@ import {parallaxObj} from '../groups/images';
 import styled from "styled-components";
 import Chalkboard from './Chalkboard';
 
-const {chalkboard, combinedCave} = parallaxObj;
+const {chalkboard} = parallaxObj;
 
 const CavewallDiv = styled.div`
     .cavewall-div{
