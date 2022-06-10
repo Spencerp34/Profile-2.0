@@ -7,6 +7,7 @@ import midnightSnaxThumbnail from "../assets/midnightSnax.png";
 import pyramidPlanetThumbnail from "../assets/pyramidPlanet.png";
 import chalkboard from "../assets/chalkboard.jpg";
 import caveBoarder from "../assets/caveboarder.png";
+import combinedCave from "../assets/combinedCave.png";
 
 const parallaxObj = {
     leftMountain,
@@ -15,6 +16,7 @@ const parallaxObj = {
     leftTrees,
     chalkboard,
     caveBoarder,
+    combinedCave,
 }
 
 const thumbnailsObj = {
