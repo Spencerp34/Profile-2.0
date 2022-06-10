@@ -21,6 +21,8 @@ const Chalkboard = () => {
     const stage = e.target.getStage();
     const point = stage.getPointerPosition();
     let lastLine = lines[lines.length - 1];
+
+    
     // add point
     lastLine.points = lastLine.points.concat([point.x, point.y]);
 
