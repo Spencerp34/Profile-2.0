@@ -1,6 +1,6 @@
 # Welcome to my Portfolio
 
-Scrolling effect powered By Paralax
+Scrolling effect powered By React-Spring Parallax.
 
 ## Created using React.js
 
