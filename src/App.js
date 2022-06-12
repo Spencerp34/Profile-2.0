@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Content from './components/Content';
 import NavigationArrows from './components/NavigationArrows';
 import Cavewall from './components/Cavewall';
+import Games from './components/games/games';
 
 const ParallaxStyleDiv = styled.div`
   .no-slide{
@@ -172,7 +173,11 @@ function App() {
                 ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
                 : null
               } 
-              <Cavewall focus={focus} />           
+              <Cavewall focus={focus} />  
+              {!redSun && focus === 2
+                ? <Games focus={focus} />
+                : null
+              } 
               <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>
