@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Select, MenuItem } from "@mui/material";
+import { useState } from "react";
 
 const GamesDiv = styled.div`
     display: flex;
@@ -22,6 +24,11 @@ const GamesDiv = styled.div`
 `
 
 const Games = (props) => {    
+    const [game, setGame] = useState("Tic-tac-toe")
+
+    const handleChange=(e)=>{
+        setGame(e.target.value)
+    }
 
     return(
         <GamesDiv>
@@ -29,6 +36,27 @@ const Games = (props) => {
                 <div className="Intro">
                     Welcome to the Games!
                 </div>
+                <Select 
+                    labelId="Game-Selection"
+                    id="Game-Selection"
+                    value={game}
+                    label="Game"
+                    onChange={handleChange}
+                >
+                    <MenuItem value={"Tic-tac-toe"}>Tic-tac-toe</MenuItem>
+                    <MenuItem value={"Guess-Number"}>Guess-Number</MenuItem>
+
+                </Select>
+                {
+                    game === "Tic-tac-toe"
+                    ?   <div className="ttt">
+                            Tic tac toe 
+                        </div>
+                    :   <div className="Guess-Number">
+                            Guess Number
+                        </div>
+                }
+                
                 
             </div>            
         </GamesDiv>
