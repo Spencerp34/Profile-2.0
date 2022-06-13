@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Select, MenuItem } from "@mui/material";
 import { useState } from "react";
+import TicTacToe from "./tictactoe";
 
 const GamesDiv = styled.div`
     display: flex;
@@ -50,7 +51,7 @@ const Games = (props) => {
                 {
                     game === "Tic-tac-toe"
                     ?   <div className="ttt">
-                            Tic tac toe 
+                            <TicTacToe />
                         </div>
                     :   <div className="Guess-Number">
                             Guess Number
