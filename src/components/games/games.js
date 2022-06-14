@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Select, MenuItem } from "@mui/material";
 import { useState } from "react";
-import TicTacToe from "./tictactoe";
+import TicTacToe from "./TicTacToe/tictactoe";
 
 const GamesDiv = styled.div`
     display: flex;
