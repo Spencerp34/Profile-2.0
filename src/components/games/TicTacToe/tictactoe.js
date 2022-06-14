@@ -23,7 +23,7 @@ const TicTacToe = (props) => {
                     X is the 
                     <br/>
                     Winner! 
-                    <button id="resetBtn">
+                    <button id="resetBtn" onClick={()=>setTurn("x")}>
                         Restart
                     </button>
                 </div>
