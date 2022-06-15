@@ -19,9 +19,11 @@ const TicTacToe = (props) => {
 
     const handleClick = (cellnumber) => {
         const formattedString = `cell${cellnumber}`
-        setMoves({...moves, [formattedString]: turn})
-        console.log(moves)
-        turn == "o" ? setTurn("x") : setTurn("o")
+        if(moves[formattedString] !== "o" && moves[formattedString] !== "x"){
+            setMoves({...moves, [formattedString]: turn})
+            console.log(moves)
+            turn === "o" ? setTurn("x") : setTurn("o")
+        }
     }
 
     return(
