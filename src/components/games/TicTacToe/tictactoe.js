@@ -17,20 +17,28 @@ const TicTacToe = (props) => {
     const [turn, setTurn] = useState("o")
     const [moves, setMoves] = useState(emptyMoves)
 
+    const handleClick = (cellnumber) => {
+        const formattedString = `cell${cellnumber}`
+        setMoves({...moves, [formattedString]: turn})
+        console.log(moves)
+        turn == "o" ? setTurn("x") : setTurn("o")
+    }
+
     return(
         <TicTacToeDiv>
             <div className="TicTacToe">
                 <div className={`board ${turn}`}>
-                    <div className={`cell ${moves.cell1}`}></div>
-                    <div className={`cell ${moves.cell2}`}></div>
-                    <div className={`cell ${moves.cell3}`}></div>
-                    <div className={`cell ${moves.cell4}`}></div>
-                    <div className={`cell ${moves.cell5}`}></div>
-                    <div className={`cell ${moves.cell6}`}></div>
-                    <div className={`cell ${moves.cell7}`}></div>
-                    <div className={`cell ${moves.cell8}`}></div>
-                    <div className={`cell ${moves.cell9}`}></div>
+                    <div className={`cell ${moves.cell1}`} onClick={()=>{handleClick(1)}}></div>
+                    <div className={`cell ${moves.cell2}`} onClick={()=>{handleClick(2)}}></div>
+                    <div className={`cell ${moves.cell3}`} onClick={()=>{handleClick(3)}}></div>
+                    <div className={`cell ${moves.cell4}`} onClick={()=>{handleClick(4)}}></div>
+                    <div className={`cell ${moves.cell5}`} onClick={()=>{handleClick(5)}}></div>
+                    <div className={`cell ${moves.cell6}`} onClick={()=>{handleClick(6)}}></div>
+                    <div className={`cell ${moves.cell7}`} onClick={()=>{handleClick(7)}}></div>
+                    <div className={`cell ${moves.cell8}`} onClick={()=>{handleClick(8)}}></div>
+                    <div className={`cell ${moves.cell9}`} onClick={()=>{handleClick(9)}}></div>
                 </div>
+                
                 <div className="winningMessage ">
                     X is the 
                     <br/>
