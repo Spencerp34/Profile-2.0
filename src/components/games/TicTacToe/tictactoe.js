@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {TicTacToeDiv} from "./tttStyle";
+import { checkForWin } from "./outcomes";
 
 
 const TicTacToe = (props) => {
@@ -17,11 +18,21 @@ const TicTacToe = (props) => {
     const [turn, setTurn] = useState("o")
     const [moves, setMoves] = useState(emptyMoves)
 
+    useEffect(() => {
+        const winCheck =  checkForWin(moves)
+        if(winCheck === "x"){
+            console.log("x is the winner")
+        }else if (winCheck === "o"){
+            console.log("o is the winner")
+        }else if(winCheck === "draw"){
+            console.log("Its a Draw")
+        }
+    }, [moves])
+
     const handleClick = (cellnumber) => {
         const formattedString = `cell${cellnumber}`
         if(moves[formattedString] !== "o" && moves[formattedString] !== "x"){
             setMoves({...moves, [formattedString]: turn})
-            console.log(moves)
             turn === "o" ? setTurn("x") : setTurn("o")
         }
     }
