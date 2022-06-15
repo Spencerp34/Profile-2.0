@@ -10,21 +10,26 @@ const outcomes = [
 ];
 
 const checkForWin = (moves) => {
+    let answer = "Nothing"
     outcomes.map(outcome => {
-        if(outcome[0] === "x" && outcome[1] === "x" && outcome[2] === "x"){
-            return("x")
-        }else if(outcome[0] === "o" && outcome[1] === "o" && outcome[2] === "o"){
-            return("o")
+        if(moves[outcome[0]] === "x" && moves[outcome[1]] === "x"){
+            if(moves[outcome[2]] === "x"){
+                answer = "x"
+            }
+        }else if(moves[outcome[0]] === "o" && moves[outcome[1]] === "o"){
+            if(moves[outcome[2]] === "o"){
+                answer = "o"
+            }
         }
-        return null
+        return "Keep Playing"
     })
+
+    const notNull = (value) => {if(value === null){return false} return true}
     const drawCheck = Object.values(moves)
-    drawCheck.map(value => {
-        if(value === null){
-            return null
-        }
-        return("draw")
-    })
+    if(drawCheck.every(value => notNull(value))){
+        answer = "draw"
+    }
+    return answer
 }
 
 export {checkForWin};
