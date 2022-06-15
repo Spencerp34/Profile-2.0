@@ -26,7 +26,7 @@ const checkForWin = (moves) => {
 
     const notNull = (value) => {if(value === null){return false} return true}
     const drawCheck = Object.values(moves)
-    if(drawCheck.every(value => notNull(value))){
+    if(answer === "Nothing" && drawCheck.every(value => notNull(value))){
         answer = "draw"
     }
     return answer
