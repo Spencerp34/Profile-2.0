@@ -97,6 +97,7 @@ const TicTacToeDiv = styled.div`
             border: 1px solid black;
             padding: .25em .5em;
             cursor: pointer;
+            transition: .3s;
         }
 
         .winningMessage button:hover{

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Select, MenuItem } from "@mui/material";
 import { useState } from "react";
 import TicTacToe from "./TicTacToe/tictactoe";
+import GuessNumber from "./GuessNumber/GuessNumber";
 
 const GamesDiv = styled.div`
     display: flex;
@@ -54,7 +55,7 @@ const Games = (props) => {
                             <TicTacToe />
                         </div>
                     :   <div className="Guess-Number">
-                            Guess Number
+                           <GuessNumber />
                         </div>
                 }
                 
