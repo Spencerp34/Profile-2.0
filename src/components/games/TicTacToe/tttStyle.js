@@ -79,7 +79,6 @@ const TicTacToeDiv = styled.div`
         }
 
         .winningMessage{
-            display: none;
             position: fixed;
             top: -35%;
             left: 0;
@@ -108,6 +107,10 @@ const TicTacToeDiv = styled.div`
 
         .winningMessage.show{
             display: flex;
+        }
+
+        .winningMessage.hidden{
+            display: none;
         }
     
     `

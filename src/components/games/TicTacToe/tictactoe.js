@@ -15,17 +15,46 @@ const TicTacToe = (props) => {
         cell8: null,
         cell9: null,
     }
-    const [turn, setTurn] = useState("o")
     const [moves, setMoves] = useState(emptyMoves)
+    const [turn, setTurn] = useState("o")
+    const [winner, setWinner] = useState(null)
+
+    const jsx = (winnerState) =>{
+        if(winnerState === "x" || winnerState === "o"){
+            return(
+                <div className="winningMessage show">
+                    <div className="message">
+                        {`${winnerState} Wins!`}
+                    </div>
+                    <button id="resetBtn" onClick={()=>handleRestart()}>
+                        Restart
+                    </button>
+                </div>
+            )
+        }else if(winnerState === "draw"){
+            return(
+                <div className="winningMessage show">
+                    <div className="message">
+                        {`It's a Draw`}
+                    </div>
+                    <button id="resetBtn" onClick={()=>handleRestart()}>
+                        Restart
+                    </button>
+                </div>
+            )
+        }else{
+            return null;
+        }
+    }
 
     useEffect(() => {
         const winCheck =  checkForWin(moves)
         if(winCheck === "x"){
-            console.log("x is the winner")
+            setWinner("x")
         }else if (winCheck === "o"){
-            console.log("o is the winner")
+            setWinner("o")
         }else if(winCheck === "draw"){
-            console.log("Its a Draw")
+            setWinner("draw")
         }
     }, [moves])
 
@@ -35,6 +64,11 @@ const TicTacToe = (props) => {
             setMoves({...moves, [formattedString]: turn})
             turn === "o" ? setTurn("x") : setTurn("o")
         }
+    }
+
+    const handleRestart = () => {
+        setMoves(emptyMoves)
+        setWinner(null)
     }
 
     return(
@@ -52,14 +86,7 @@ const TicTacToe = (props) => {
                     <div className={`cell ${moves.cell9}`} onClick={()=>{handleClick(9)}}></div>
                 </div>
                 
-                <div className="winningMessage ">
-                    X is the 
-                    <br/>
-                    Winner! 
-                    <button id="resetBtn" onClick={()=>setTurn("x")}>
-                        Restart
-                    </button>
-                </div>
+                {jsx(winner)}
             </div>
         </TicTacToeDiv>
     )
