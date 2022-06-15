@@ -42,7 +42,7 @@ const GuessNumber = () => {
                     ? 
                         <div className="in-game">
                             <div className="number" onClick={()=>setInGame(false)}>
-                                50
+                                Go back
                             </div>
                         </div>
                     :
