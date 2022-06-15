@@ -16,16 +16,23 @@ const TicTacToe = (props) => {
         cell9: null,
     }
     const [moves, setMoves] = useState(emptyMoves)
-    const [turn, setTurn] = useState("o")
+    const [turn, setTurn] = useState("x")
     const [winner, setWinner] = useState(null)
 
     const jsx = (winnerState) =>{
-        if(winnerState === "x" || winnerState === "o"){
+        if(winnerState === "x"){
             return(
                 <div className="winningMessage show">
-                    <div className="message">
-                        {`${winnerState} Wins!`}
-                    </div>
+                        X Wins!
+                    <button id="resetBtn" onClick={()=>handleRestart()}>
+                        Restart
+                    </button>
+                </div>
+            )
+        }else if(winnerState === "o"){
+            return(
+                <div className="winningMessage show">
+                        O Wins!
                     <button id="resetBtn" onClick={()=>handleRestart()}>
                         Restart
                     </button>
@@ -35,7 +42,7 @@ const TicTacToe = (props) => {
             return(
                 <div className="winningMessage show">
                     <div className="message">
-                        {`It's a Draw`}
+                        It's a Draw
                     </div>
                     <button id="resetBtn" onClick={()=>handleRestart()}>
                         Restart
