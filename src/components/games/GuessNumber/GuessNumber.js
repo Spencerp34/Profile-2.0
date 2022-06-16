@@ -27,6 +27,9 @@ const GuessDiv = styled.div`
         color: white;
         border: 1px solid white;
     }
+    span{
+        color: tomato;
+    }
 `
 
 const GuessNumber = () => {
@@ -37,6 +40,11 @@ const GuessNumber = () => {
     const handleClick = (direction) => {
         setGuesses(guesses -1)
         setNumber(number + 1)
+    }
+
+    const reset = () => {
+        setGuesses(8)
+        setNumber(50)
     }
 
 
@@ -50,12 +58,13 @@ const GuessNumber = () => {
                             <div className="number lets-go-btn" onClick={()=>setInGame(false)}>
                                 Go back
                             </div>
-                            <div className="guesses">{guesses}</div>
-                            <div className="number" > Is your number: {number}? </div>
+                            <div className="guesses">Guesses: {guesses}</div>
+                            <div className="number" > Is your number: <span>{number}</span>? </div>
                             <div className="moreOrLess">
                                 <button className="less" onClick={()=>handleClick("less")}>Less</button>
                                 <button className="more" onClick={()=>handleClick("more")}>More</button>
                             </div>
+                            <button onClick={()=>reset()}>Reset</button>
                         </div>
                     :
                         <div className="pre-game">
