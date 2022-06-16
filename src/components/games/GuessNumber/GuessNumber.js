@@ -36,15 +36,29 @@ const GuessNumber = () => {
     const [inGame, setInGame] = useState(false);
     const [guesses, setGuesses] = useState(8);
     const [number, setNumber] = useState(50)
+    const [range, setRange] = useState({high: 100, low: 0})
 
     const handleClick = (direction) => {
+        if(direction === "more"){
+            setRange({...range, low: number})
+            let average = Math.floor((number + range.high)/2)
+            setNumber(average)
+        }else if(direction === "less"){
+            setRange({...range, high: number})
+            let average = Math.floor((number + range.low)/2)
+            setNumber(average)
+        }
         setGuesses(guesses -1)
-        setNumber(number + 1)
     }
 
     const reset = () => {
         setGuesses(8)
         setNumber(50)
+        setRange({high: 100, low: 0})
+    }
+
+    const handleVictory = () =>{
+        reset()
     }
 
 
@@ -60,6 +74,7 @@ const GuessNumber = () => {
                             </div>
                             <div className="guesses">Guesses: {guesses}</div>
                             <div className="number" > Is your number: <span>{number}</span>? </div>
+                            <button className="correct" onClick={() => handleVictory()}>Correct!</button>
                             <div className="moreOrLess">
                                 <button className="less" onClick={()=>handleClick("less")}>Less</button>
                                 <button className="more" onClick={()=>handleClick("more")}>More</button>
