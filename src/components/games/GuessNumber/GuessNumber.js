@@ -31,7 +31,13 @@ const GuessDiv = styled.div`
 
 const GuessNumber = () => {
     const [inGame, setInGame] = useState(false);
+    const [guesses, setGuesses] = useState(8);
+    const [number, setNumber] = useState(50)
 
+    const handleClick = (direction) => {
+        setGuesses(guesses -1)
+        setNumber(number + 1)
+    }
 
 
     return(
@@ -41,8 +47,14 @@ const GuessNumber = () => {
                     inGame 
                     ? 
                         <div className="in-game">
-                            <div className="number" onClick={()=>setInGame(false)}>
+                            <div className="number lets-go-btn" onClick={()=>setInGame(false)}>
                                 Go back
+                            </div>
+                            <div className="guesses">{guesses}</div>
+                            <div className="number" > Is your number: {number}? </div>
+                            <div className="moreOrLess">
+                                <button className="less" onClick={()=>handleClick("less")}>Less</button>
+                                <button className="more" onClick={()=>handleClick("more")}>More</button>
                             </div>
                         </div>
                     :
