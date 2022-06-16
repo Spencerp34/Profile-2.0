@@ -20,7 +20,7 @@ const GuessDiv = styled.div`
         border: 1px solid black;
         border-radius: 5px;
         cursor: pointer;
-        width: 50%;
+        width: 60%;
         transition: .3s;
     }
     .lets-go-btn:hover{
@@ -30,18 +30,25 @@ const GuessDiv = styled.div`
     span{
         color: tomato;
     }
+    .in-game{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 60vh;
+    }
 `
 
 const GuessNumber = () => {
     const [inGame, setInGame] = useState(false);
     const [guesses, setGuesses] = useState(8);
     const [number, setNumber] = useState(50)
-    const [range, setRange] = useState({high: 100, low: 0})
+    const [range, setRange] = useState({high: 100, low: 1})
 
     const handleClick = (direction) => {
         if(direction === "more"){
             setRange({...range, low: number})
-            let average = Math.floor((number + range.high)/2)
+            let average = Math.ceil((number + range.high)/2)
             setNumber(average)
         }else if(direction === "less"){
             setRange({...range, high: number})
@@ -69,17 +76,19 @@ const GuessNumber = () => {
                     inGame 
                     ? 
                         <div className="in-game">
-                            <div className="number lets-go-btn" onClick={()=>setInGame(false)}>
-                                Go back
+                            <div className="lets-go-btn" onClick={()=>setInGame(false)}>
+                                ← Go back
                             </div>
                             <div className="guesses">Guesses: {guesses}</div>
                             <div className="number" > Is your number: <span>{number}</span>? </div>
-                            <button className="correct" onClick={() => handleVictory()}>Correct!</button>
-                            <div className="moreOrLess">
-                                <button className="less" onClick={()=>handleClick("less")}>Less</button>
-                                <button className="more" onClick={()=>handleClick("more")}>More</button>
+                            <div className="btns">
+                                <button className="correct" onClick={() => handleVictory()}>Correct!</button>
+                                <div className="moreOrLess">
+                                    <button className="less" onClick={()=>handleClick("less")}>Less</button>
+                                    <button className="more" onClick={()=>handleClick("more")}>More</button>
+                                </div>
+                                <button onClick={()=>reset()}>Reset</button>
                             </div>
-                            <button onClick={()=>reset()}>Reset</button>
                         </div>
                     :
                         <div className="pre-game">
