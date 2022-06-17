@@ -7,34 +7,32 @@ import GuessNumber from "./GuessNumber/GuessNumber";
 const GamesDiv = styled.div`
     .no-slide{
         transition: transform 3s;
-        transform: translate(0%);
+        left: 20%;
     }
 
     .ultra-right{
         transition 2s;
-        transform: translateX(150%);
+        left: 200%;
     }
 
     .ultra-left{
         transition 2s;
-        transform: translateX(-150%);
+        left: -200%;
     }
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    left: 20%;
-    top: -20%;
     display:inline-block;
-    width: 60vw;
     .Games{
+        position: absolute;
+        top: -20%;
+        width: 60vw;
         color: black;
         background-color: rgba(196, 196, 196, 0.3);
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
         min-height: 80vh;
         border-radius: 15px;
     }
@@ -52,7 +50,7 @@ const position = (focusState)=>{
 
 const Games = (props) => {    
     const [game, setGame] = useState("Tic-tac-toe")
-    const {focus} = props;
+    const {focusState} = props;
 
     const handleChange=(e)=>{
         setGame(e.target.value)
@@ -60,7 +58,7 @@ const Games = (props) => {
 
     return(
         <GamesDiv>
-            <div className={`Games ${position(focus)}`}>
+            <div className={`Games ${position(focusState)}`}>
                 <div className="Intro">
                     Welcome to the Games!
                 </div>

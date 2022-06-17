@@ -35,10 +35,10 @@ const CavewallDiv = styled.div`
 `
 
 const Cavewall = (props) => {
-    const {focus} = props;
+    const {focusState} = props;
     return(
         <CavewallDiv>
-            <div className={focus === 0 ? "focused" : "cavewall-div"}>
+            <div className={focusState === 0 ? "focused" : "cavewall-div"}>
                 <div className='chalkboard'>
                     <Chalkboard />
                 </div>
