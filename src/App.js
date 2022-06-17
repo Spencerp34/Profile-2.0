@@ -170,7 +170,10 @@ function App() {
               speed={1.2}
               onClick={() => ref.current.scrollTo(2)}
             >
-              <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
+              {redSun
+                ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
+                : null
+              } 
               <Cavewall focusState={focusState} />                
               <Games focusState={focusState} />
               <About focusState={focusState} />
