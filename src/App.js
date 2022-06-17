@@ -9,6 +9,7 @@ import Content from './components/Content';
 import NavigationArrows from './components/NavigationArrows';
 import Cavewall from './components/Cavewall';
 import Games from './components/games/games';
+import About from './components/About';
 
 const ParallaxStyleDiv = styled.div`
   .no-slide{
@@ -28,12 +29,12 @@ const ParallaxStyleDiv = styled.div`
 
   .ultra-right{
     transition 2s;
-    transform: translateX(100%)
+    transform: translateX(100%);
   }
 
   .ultra-left{
     transition 2s;
-    transform: translateX(-100%)
+    transform: translateX(-100%);
   }
 `
 
@@ -140,7 +141,7 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: `radial-gradient(${redSun ? "red" : "#131321"}, #131321, #131321, #131321)`
+              background: `radial-gradient(${redSun ? "crimson" : "#131321"}, #131321, #131321, #131321)`
             }}
             
           >
@@ -152,7 +153,7 @@ function App() {
             factor={1.0}
             speed={0.15}
           >
-            <img src={leftTrees} alt="leftTrees." width={"100%"} className={(`${focusClasses(focus)} ${slideLeft(treesOpen)}`)} />
+            <img src={leftTrees} alt="leftTrees" width={"100%"} className={(`${focusClasses(focus)} ${slideLeft(treesOpen)}`)} />
           </ParallaxLayer>
         
           <ParallaxLayer
@@ -174,14 +175,8 @@ function App() {
                 : null
               } 
               <Cavewall focus={focus} />                
-              {!redSun && focus === 2
-                ? <Games focus={focus} />
-                : null
-              } 
-              {focus=== 3
-                ? <div>test</div>
-                : null
-              }
+              <Games focus={focus} />
+              <About focus={focus} />
               <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>
