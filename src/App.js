@@ -29,12 +29,12 @@ const ParallaxStyleDiv = styled.div`
 
   .ultra-right{
     transition 2s;
-    transform: translateX(100%);
+    transform: translateX(150%);
   }
 
   .ultra-left{
     transition 2s;
-    transform: translateX(-100%);
+    transform: translateX(-150%);
   }
 `
 
@@ -175,10 +175,7 @@ function App() {
                 : null
               } 
               <Cavewall focus={focus} />                
-              {!redSun && focus === 2
-                ? <Games focus={focus} />
-                : null
-              } 
+              <Games focus={focus} />
               <About focus={focus} />
               <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
