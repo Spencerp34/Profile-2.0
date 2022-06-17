@@ -175,14 +175,8 @@ function App() {
                 : null
               } 
               <Cavewall focus={focus} />                
-              {!redSun && focus === 2
-                ? <Games focus={focus} />
-                : null
-              } 
-              {focus=== 3
-                ? <About focus={focus} />
-                : null
-              }
+              <Games focus={focus} />
+              <About focus={focus} />
               <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>

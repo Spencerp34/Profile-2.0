@@ -20,9 +20,9 @@ const AboutDiv = styled.section`
 const position = (focusState)=>{
     if(focusState === 3){
         return "no-slide"
-    }else if(focusState > 3){
-        return "ultra-right"
     }else if(focusState < 3){
+        return "ultra-right"
+    }else if(focusState > 3){
         return "ultra-left"
     }
 }
