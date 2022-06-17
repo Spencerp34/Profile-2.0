@@ -15,13 +15,13 @@ const NavigationArrowsDiv = styled.div`
 
 const NavigationArrows = (props) => {
 
-    const {focus, changeFocusState} = props;
+    const {focusState, changeFocusState} = props;
 
     const handleLeft = () => {
-        changeFocusState(focus - 1)
+        changeFocusState(focusState - 1)
     };
     const handleRight = () => {
-        changeFocusState(focus + 1)
+        changeFocusState(focusState + 1)
     };
 
     const jsx = (focusState) => {
@@ -36,7 +36,7 @@ const NavigationArrows = (props) => {
                     </div>
                 </section>
             )
-        }else if ( focus === 3){
+        }else if ( focusState === 3){
             return(
                 <section className="navigation-arrows">
                     <div 
@@ -73,7 +73,7 @@ const NavigationArrows = (props) => {
 
     return(
         <NavigationArrowsDiv>
-            {jsx(focus)}
+            {jsx(focusState)}
         </NavigationArrowsDiv>
     )
 }

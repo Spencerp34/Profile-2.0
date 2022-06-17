@@ -28,11 +28,11 @@ const position = (focusState)=>{
 }
 
 const About = (props) =>{
-    const {focus} = props;
+    const {focusState} = props;
 
     return(
         <AboutDiv>
-            <div className={`${position(focus)}`}>
+            <div className={`${position(focusState)}`}>
                 Testing
             </div>
         </AboutDiv>

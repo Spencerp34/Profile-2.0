@@ -41,7 +41,7 @@ const ParallaxStyleDiv = styled.div`
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
   const [prevFocus, setPrevFocus] = useState();
-  const [focus, setFocus] = useState(1);
+  const [focusState, setFocusState] = useState(1);
   const ref = useRef();
   const { leftMountain, rightMountain, leftTrees, rightTrees } = parallaxObj;
   const [redSun, setRedSun] = useState(true)
@@ -60,24 +60,24 @@ function App() {
   }
 
   const changeFocusState = (intiger) => {
-    setPrevFocus(focus)
-    setFocus(intiger)
+    setPrevFocus(focusState)
+    setFocusState(intiger)
   }
 
 
   useEffect(()=>{
     if(prevFocus === undefined){
       setRedSun(true);
-    }else if(prevFocus === 1 && focus === 2){
+    }else if(prevFocus === 1 && focusState === 2){
       setTimeout(() => {setRedSun(false)}, 300);
-    }else if(prevFocus === 0 && focus === 1){
+    }else if(prevFocus === 0 && focusState === 1){
       setTimeout(() => {setRedSun(true)}, 1500);
-    }else if(prevFocus === 2 && focus === 1){
+    }else if(prevFocus === 2 && focusState === 1){
       setTimeout(() => {setRedSun(true)}, 1500);
-    }else if (prevFocus === 1 && focus === 0){
+    }else if (prevFocus === 1 && focusState === 0){
       setTimeout(() => {setRedSun(false)}, 300);
     }
-  }, [focus, prevFocus])
+  }, [focusState, prevFocus])
 
   const slideLeft = (treesOpenState) => {
     if(treesOpenState){
@@ -153,7 +153,7 @@ function App() {
             factor={1.0}
             speed={0.15}
           >
-            <img src={leftTrees} alt="leftTrees" width={"100%"} className={(`${focusClasses(focus)} ${slideLeft(treesOpen)}`)} />
+            <img src={leftTrees} alt="leftTrees" width={"100%"} className={(`${focusClasses(focusState)} ${slideLeft(treesOpen)}`)} />
           </ParallaxLayer>
         
           <ParallaxLayer
@@ -161,7 +161,7 @@ function App() {
             factor={1.2}
             speed={0.25}            
           >
-            <img src={rightTrees} alt="rightTrees" width={"100%"} className={(`${focusClasses(focus)} ${slideRight(treesOpen)}`) } />
+            <img src={rightTrees} alt="rightTrees" width={"100%"} className={(`${focusClasses(focusState)} ${slideRight(treesOpen)}`) } />
           </ParallaxLayer>
 
           <ParallaxLayer
@@ -170,17 +170,11 @@ function App() {
               speed={1.2}
               onClick={() => ref.current.scrollTo(2)}
             >
-              {redSun
-                ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
-                : null
-              } 
-              <Cavewall focus={focus} />                
-              {true
-                ? <Games focus={focus} />
-                : null
-              } 
-              <About focus={focus} />
-              <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
+              <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
+              <Cavewall focusState={focusState} />                
+              <Games focusState={focusState} />
+              <About focusState={focusState} />
+              <NavigationArrows ref={ref} focusState={focusState} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>
       
