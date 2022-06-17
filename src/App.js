@@ -54,7 +54,7 @@ function App() {
       case 0:
         return "ultra-right"
       default: 
-        return "no-slide"
+        return "ultra-left"
     }
   }
 
@@ -173,11 +173,15 @@ function App() {
                 ? <Content setTreesOpen={setTreesOpen} treesOpen={treesOpen} />
                 : null
               } 
-              <Cavewall focus={focus} />  
+              <Cavewall focus={focus} />                
               {!redSun && focus === 2
                 ? <Games focus={focus} />
                 : null
               } 
+              {focus=== 3
+                ? <div>test</div>
+                : null
+              }
               <NavigationArrows ref={ref} focus={focus} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>

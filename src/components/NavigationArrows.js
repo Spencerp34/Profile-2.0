@@ -36,7 +36,7 @@ const NavigationArrows = (props) => {
                     </div>
                 </section>
             )
-        }else if ( focus === 2){
+        }else if ( focus === 3){
             return(
                 <section className="navigation-arrows">
                     <div 
