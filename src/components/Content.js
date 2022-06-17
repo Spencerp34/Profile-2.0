@@ -4,7 +4,8 @@ import {styles} from "../groups/constants";
 
 const ContentDiv = styled.div`
     .project-title {
-        ${styles.primaryText}
+        cursor: pointer;
+        ${styles.primaryText};
     }
 
     .primaryWhite{
