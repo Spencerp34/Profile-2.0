@@ -1,20 +1,37 @@
 import styled from "styled-components";
-
+import { aboutObj } from "../groups/images";
 
 const AboutDiv = styled.section`
     .no-slide{
         transition: transform 3s;
-        transform: translate(0%);
+        left: 20%;
     }
 
     .ultra-right{
         transition 2s;
-        transform: translateX(100%);
+        left: 200%;
     }
 
     .ultra-left{
         transition 2s;
-        transform: translateX(-100%);
+        left: -200%;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display:inline-block;
+    .About{
+        position: absolute;
+        top: -20%;
+        width: 60vw;
+        color: black;
+        background-color: rgba(196, 196, 196, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 80vh;
+        border-radius: 15px;
     }
 `
 
@@ -29,12 +46,18 @@ const position = (focusState)=>{
 }
 
 const About = (props) =>{
+    const {github, linkedIn, email, phone} = aboutObj;
     const {focusState} = props;
 
     return(
         <AboutDiv>
-            <section className={`${position(focusState)}`}>
-                Testing
+            <section className={`${position(focusState)} About`}>
+                <div className="contact">
+                    <img src={phone} alt="phone" width={"100px"}/>
+                    <img src={email} alt="email" width={"100px"} />
+                    <img src={github} alt="github" width={"100px"} />
+                    <img src={linkedIn} alt="linkedIn" width={"100px"} />
+                </div>
             </section>
         </AboutDiv>
     )
