@@ -8,6 +8,13 @@ import pyramidPlanetThumbnail from "../assets/pyramidPlanet.png";
 import chalkboard from "../assets/chalkboard.jpg";
 import caveBoarder from "../assets/caveboarder.png";
 import combinedCave from "../assets/combinedCave.png";
+import github from "../assets/github.png";
+import linkedIn from "../assets/linkedIn.png";
+import email from "../assets/email.png";
+import phone from "../assets/phone.png";
+import profilePic from "../assets/profilePic.jpeg";
+import withWife from "../assets/withWife.jpeg";
+
 
 const parallaxObj = {
     leftMountain,
@@ -25,7 +32,17 @@ const thumbnailsObj = {
     pyramidPlanetThumbnail,
 }
 
+const aboutObj = {
+    github,
+    linkedIn,
+    email,
+    phone,
+    profilePic,
+    withWife,
+}
+
 export {
     parallaxObj,
     thumbnailsObj,
+    aboutObj,
 }
