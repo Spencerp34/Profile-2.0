@@ -20,6 +20,10 @@ const GamesDiv = styled.div`
         left: -200%;
     }
 
+    .arena{
+        margin-top: 5vh;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,15 +77,17 @@ const Games = (props) => {
                     <MenuItem value={"Guess-Number"}>Guess-Number</MenuItem>
 
                 </Select>
-                {
-                    game === "Tic-tac-toe"
-                    ?   <div className="ttt">
-                            <TicTacToe />
-                        </div>
-                    :   <div className="Guess-Number">
-                           <GuessNumber />
-                        </div>
-                }
+                <div className="arena">
+                    {
+                        game === "Tic-tac-toe"
+                        ?   <div className="ttt">
+                                <TicTacToe />
+                            </div>
+                        :   <div className="Guess-Number">
+                            <GuessNumber />
+                            </div>
+                    }
+                </div>
                 
                 
             </div>            

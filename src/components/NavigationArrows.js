@@ -3,6 +3,7 @@ import {styles} from "../groups/constants";
 
 const NavigationArrowsDiv = styled.div`
     .primaryWhite{
+        cursor: pointer;
         ${styles.primaryText}
     }
     .right{

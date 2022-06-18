@@ -17,6 +17,7 @@ const WelcomeDiv = styled.div`
         background: -webkit-linear-gradient(white, #38495a);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
+        cursor: pointer;
     }
   
     h4 {
