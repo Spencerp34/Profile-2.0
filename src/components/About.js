@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const AboutDiv = styled.section`
     .no-slide{
         transition: transform 3s;
@@ -32,9 +33,9 @@ const About = (props) =>{
 
     return(
         <AboutDiv>
-            <div className={`${position(focusState)}`}>
+            <section className={`${position(focusState)}`}>
                 Testing
-            </div>
+            </section>
         </AboutDiv>
     )
 }
