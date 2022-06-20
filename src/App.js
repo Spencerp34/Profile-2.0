@@ -8,7 +8,7 @@ import styled from "styled-components";
 import Content from "./components/Projects/Content";
 import NavigationArrows from "./components/NavigationArrows";
 import Cavewall from "./components/ChalkBoard/Cavewall";
-import Games from "./components/games/games";
+import Games from "./components/Games/Games";
 import About from "./components/About/About";
 
 const ParallaxStyleDiv = styled.div`
