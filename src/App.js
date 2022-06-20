@@ -1,15 +1,15 @@
-import './App.css';
-import { useRef, useState, useEffect } from 'react';
-import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import {parallaxObj} from './groups/images';
+import "./App.css";
+import { useRef, useState, useEffect } from "react";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import {parallaxObj} from "./groups/images";
 import Stars from "./components/Stars/Stars";
-import Welcome from './components/Welcome';
+import Welcome from "./components/Welcome";
 import styled from "styled-components";
-import Content from './components/Projects/Content';
-import NavigationArrows from './components/NavigationArrows';
-import Cavewall from './components/ChalkBoard/Cavewall';
-import Games from './components/Games/Games.js';
-import About from './components/About/About';
+import Content from "./components/Projects/Content";
+import NavigationArrows from "./components/NavigationArrows";
+import Cavewall from "./components/ChalkBoard/Cavewall";
+import Games from "./components/Games";
+import About from "./components/About/About";
 
 const ParallaxStyleDiv = styled.div`
   .no-slide{
