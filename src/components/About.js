@@ -37,6 +37,20 @@ const AboutDiv = styled.section`
         overflow-x: hidden;
     }
 
+    .contact{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        height: 20vh;
+        margin-bottom: 5vh;
+    }
+
+    .mini-contact{
+        width:20%;
+    }
+
     .about{
         display: flex;
         flex-direction: column;
@@ -80,10 +94,13 @@ const AboutDiv = styled.section`
         border-left: 1px solid black;
         border-right: 1px solid grey;
     }
+    img{
+        border-radius: 15px;
+    }
     #spensa,
     #wife
     {
-        width: 100%;
+        width: 60%;
         transform: scaleX(-1);
         border-radius: 15px;
     }
@@ -178,14 +195,32 @@ const position = (focusState)=>{
 }
 
 const About = (props) =>{
-    const {github, linkedIn, email, phone, profilePic, withWife} = aboutObj;
+    const {github, linkedIn, email, phone, profilePic, withWife, fantasyPixel} = aboutObj;
     const {focusState} = props;
 
     return(
         <AboutDiv>
             <section className={`${position(focusState)} About`}>
-                <div className="intro">
+                <h2 className="intro">
                     About Me
+                </h2>
+                <div className="contact">
+                    <div className="phone  mini-contact">
+                        <img src={phone} alt="phone" width={"70px"}/>
+                        <h4>(925) 915 - 1853</h4>
+                    </div>
+                    <div className="email mini-contact">
+                        <img src={email} alt="email" width={"100px"} />
+                        <h4>spencerp34@yahoo.com</h4>
+                    </div>
+                    <div className="github mini-contact">
+                        <img src={github} alt="github" width={"75px"} />
+                        <h4>spencerp34</h4>
+                    </div>
+                    <div className="linkedIn mini-contact">
+                        <img src={linkedIn} alt="linkedIn" width={"75px"} />
+                        <h4>spencerp34</h4>
+                    </div>
                 </div>
                 <div className='info'>
                     <div className='tidbit left'>
@@ -212,7 +247,7 @@ const About = (props) =>{
                     <div className='tidbit'>
                         <h4>Interests</h4>
                         <ul>
-                            <li>Game Development with Unity</li>
+                            <li>Game Development</li>
                             <li>Python and C#</li>
                         </ul>
                     </div>
@@ -229,23 +264,23 @@ const About = (props) =>{
                 <div className='bio'>
                     <h4>Bio</h4>
                     <br/>
-                    <h5>Born and Raised in Utah, spent some years in California in High School.</h5>
+                    <h5>Born and Raised in Utah</h5>
                     <p>Married to my wonderful wife!</p>
                     <img src={withWife} id='wife' alt='wife'/>
                     <div className='organized'>
-                        <p>Biggest Nerd you'll ever know! (Lets talk Marvel, DC, Star Wars, Tolkien, Video Games, Movies, and especially Brandon Sanderson Books!)</p>
-                        <div className='image one'></div>
-                        <div className='image two'></div>
+                        <p>Just the biggest nerd around (Lets talk Marvel, DC, Star Wars, Tolkien, Video Games, Movies, and especially Brandon Sanderson books!)</p>
+                        <div className='image one'>
+                            <img src={fantasyPixel} alt="fantasy pixel ar" />
+                        </div>
+                        <div className='image two'>
+                            <img src="https://i.etsystatic.com/17653747/r/il/b1b2a5/2616825596/il_794xN.2616825596_6a5j.jpg" alt="game-room" />
+                        </div>
                         <p>I collect retro video games and comic books</p>
                         <p>I rate all types of Root Beers with over 100 different brands tried (You should try O'zell Root Beer ⭐⭐⭐⭐⭐)</p>
-                        <div className='image three'></div>
+                        <div className='image three'>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjGE48dIo0Fu0jN38CYWrnWHKJh8F8-INqIw&usqp=CAU" alt="rootbeer" />
+                        </div>
                     </div>
-                </div>
-                <div className="contact">
-                    <img src={phone} alt="phone" width={"100px"}/>
-                    <img src={email} alt="email" width={"100px"} />
-                    <img src={github} alt="github" width={"100px"} />
-                    <img src={linkedIn} alt="linkedIn" width={"100px"} />
                 </div>
             </section>
         </AboutDiv>
