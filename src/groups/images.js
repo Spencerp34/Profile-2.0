@@ -14,7 +14,7 @@ import email from "../assets/email.png";
 import phone from "../assets/phone.png";
 import profilePic from "../assets/profilePic.jpeg";
 import withWife from "../assets/withWife.jpeg";
-
+import fantasyPixel from "../assets/fantasyPixel.webp";
 
 const parallaxObj = {
     leftMountain,
@@ -39,6 +39,7 @@ const aboutObj = {
     phone,
     profilePic,
     withWife,
+    fantasyPixel,
 }
 
 export {
