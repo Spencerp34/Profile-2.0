@@ -1,6 +1,6 @@
-import {parallaxObj} from '../groups/images';
+import {parallaxObj} from "../../groups/images";
 import styled from "styled-components";
-import Chalkboard from './ChalkBoard/Chalkboard';
+import Chalkboard from './Chalkboard';
 
 const {chalkboard} = parallaxObj;
 
