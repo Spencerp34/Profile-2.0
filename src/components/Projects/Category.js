@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import options from "../groups/options.js";
+import options from "../../groups/options.js";
 
 const CategoryDiv = styled.div`
     width: 100%;

@@ -1,6 +1,6 @@
 import DisplayModal from './Modal';
 import styled from "styled-components";
-import {styles} from "../groups/constants";
+import {styles} from "../../groups/constants";
 
 const ContentDiv = styled.div`
     .project-title {

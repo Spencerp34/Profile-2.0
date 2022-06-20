@@ -5,10 +5,10 @@ import {parallaxObj} from './groups/images';
 import Stars from "./components/Stars/Stars";
 import Welcome from './components/Welcome';
 import styled from "styled-components";
-import Content from './components/Content';
+import Content from './components/Projects/Content';
 import NavigationArrows from './components/NavigationArrows';
-import Cavewall from './components/Cavewall';
-import Games from './components/games/games';
+import Cavewall from './components/ChalkBoard/Cavewall';
+import Games from './components/Games/Games';
 import About from './components/About/About';
 
 const ParallaxStyleDiv = styled.div`

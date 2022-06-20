@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import options from "../groups/options.js";
+import options from "../../groups/options.js";
 
 const DetailsDiv = styled.div`
     display: flex;
