@@ -47,7 +47,7 @@ const About = (props) =>{
                     <div className='tidbit left'>
                         <h3>Spencer Patterson</h3>
                     </div>
-                    <hr class="solid" />
+                    <hr className="solid" />
                     <div className='tidbit'>
                         <img  id='spensa' src={profilePic} alt='profilePicture'/>
                     </div>
@@ -55,7 +55,7 @@ const About = (props) =>{
                         <h3> Full Stack Web Developer </h3>
                         <h5 id='bloomtech'> Bloom Institute of Technology Alumni </h5>
                     </div>
-                    <hr class="solid" />
+                    <hr className="solid" />
                     <div className='tidbit'>
                         <h4>Full Stack Skills</h4>
                         <ul>
@@ -72,7 +72,7 @@ const About = (props) =>{
                             <li>Python and C#</li>
                         </ul>
                     </div>
-                    <hr class="solid" />
+                    <hr className="solid" />
                     <div className='tidbit'>
                         <h4>Hobbies</h4>
                         <ul>
