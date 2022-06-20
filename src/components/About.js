@@ -31,8 +31,10 @@ const AboutDiv = styled.section`
         display: flex;
         flex-direction: column;
         align-items: center;
-        min-height: 70vh;
+        height: 70vh;
         border-radius: 15px;
+        overflow: scroll;
+        overflow-x: hidden;
     }
 
     .about{
@@ -94,7 +96,7 @@ const AboutDiv = styled.section`
     }
     .organized p{
         width: 40%;
-        min-height: 30vh;
+       height: 30vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
