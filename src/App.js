@@ -9,7 +9,7 @@ import Content from './components/Content';
 import NavigationArrows from './components/NavigationArrows';
 import Cavewall from './components/Cavewall';
 import Games from './components/games/games';
-import About from './components/About';
+import About from './components/About/About';
 
 const ParallaxStyleDiv = styled.div`
   .no-slide{
