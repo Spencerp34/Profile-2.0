@@ -10,6 +10,8 @@ import NavigationArrows from "./components/NavigationArrows";
 import Cavewall from "./components/ChalkBoard/Cavewall";
 import Games from "./components/Games/Games";
 import About from "./components/About/About";
+import LeftMountain from "./components/Parallax/LeftMountain";
+import RightMountain from "./components/Parallax/RightMountain";
 
 const ParallaxStyleDiv = styled.div`
   .no-slide{
@@ -43,7 +45,7 @@ function App() {
   const [prevFocus, setPrevFocus] = useState();
   const [focusState, setFocusState] = useState(1);
   const ref = useRef();
-  const { leftMountain, rightMountain, leftTrees, rightTrees } = parallaxObj;
+  const {leftTrees, rightTrees } = parallaxObj;
   const [redSun, setRedSun] = useState(true)
 
   const focusClasses = (focusState) => {
@@ -113,26 +115,28 @@ function App() {
           
           <ParallaxLayer
             offset={0.75}
-            factor={1}
+            factor={0.5}
             speed={0.2}
             style={{
-              backgroundImage: `url(${leftMountain})`,
-              backgroundSize: "100%",
+              backgroundColor: "transparent",
+              display: "flex",
+              alignItems: "end",
             }}
-            
           >
+            <LeftMountain />
           </ParallaxLayer>
 
           <ParallaxLayer
             offset={0.9}
-            factor={1}
+            factor={0.5}
             speed={0.4}
             style={{
-              backgroundImage: `url(${rightMountain})`,
-              backgroundSize: "100%",     
+              backgroundColor: "transparent",
+              display: "flex",
+              alignItems: "end",  
             }}
           >
-
+            <RightMountain />
           </ParallaxLayer>
 
           <ParallaxLayer
