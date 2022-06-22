@@ -41,7 +41,7 @@ const Chalkboard = () => {
 
 
   return (
-    <div>
+    <div className='chalkboard'>
       <select
         value={tool}
         onChange={(e) => {
@@ -55,8 +55,8 @@ const Chalkboard = () => {
           Erase All
       </button>
       <Stage
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width={window.innerWidth * 0.75}
+        height={window.innerHeight * 0.8}
         onMouseDown={handleMouseDown}
         onMousemove={handleMouseMove}
         onMouseup={handleMouseUp}
