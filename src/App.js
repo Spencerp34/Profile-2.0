@@ -1,7 +1,6 @@
 import "./App.css";
 import { useRef, useState, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import {parallaxObj} from "./groups/images";
 import Stars from "./components/Stars/Stars";
 import Welcome from "./components/Welcome";
 import styled from "styled-components";
@@ -12,6 +11,8 @@ import Games from "./components/Games/Games";
 import About from "./components/About/About";
 import LeftMountain from "./components/Parallax/LeftMountain";
 import RightMountain from "./components/Parallax/RightMountain";
+import LeftTrees from "./components/Parallax/LeftTrees";
+import RightTrees from "./components/Parallax/RightTrees";
 
 const ParallaxStyleDiv = styled.div`
   .no-slide{
@@ -45,7 +46,6 @@ function App() {
   const [prevFocus, setPrevFocus] = useState();
   const [focusState, setFocusState] = useState(1);
   const ref = useRef();
-  const {leftTrees, rightTrees } = parallaxObj;
   const [redSun, setRedSun] = useState(true)
 
   const focusClasses = (focusState) => {
@@ -80,18 +80,6 @@ function App() {
       setTimeout(() => {setRedSun(false)}, 300);
     }
   }, [focusState, prevFocus])
-
-  const slideLeft = (treesOpenState) => {
-    if(treesOpenState){
-      return "slide-left"
-    }
-  }
-
-  const slideRight = (treesOpenState) => {
-    if(treesOpenState){
-      return "slide-right"
-    }
-  }
 
   return (
     <div className="App">
@@ -128,7 +116,7 @@ function App() {
 
           <ParallaxLayer
             offset={0.9}
-            factor={0.5}
+            factor={0.6}
             speed={0.4}
             style={{
               backgroundColor: "transparent",
@@ -156,16 +144,25 @@ function App() {
             offset={1}
             factor={1.0}
             speed={0.15}
+            style={{
+              backgroundColor: "transparent",
+              display: "flex",
+              alignItems: "end",  
+            }}
           >
-            <img src={leftTrees} alt="leftTrees" width={"100%"} className={(`${focusClasses(focusState)} ${slideLeft(treesOpen)}`)} />
+            <LeftTrees focusState={focusState} focusClasses={focusClasses} treesOpen={treesOpen}/>
           </ParallaxLayer>
         
           <ParallaxLayer
             offset={1}
             factor={1.2}
-            speed={0.25}            
+            speed={0.25}
+            style={{
+              backgroundColor: "transparent",
+              display: "flex",  
+            }}
           >
-            <img src={rightTrees} alt="rightTrees" width={"100%"} className={(`${focusClasses(focusState)} ${slideRight(treesOpen)}`) } />
+            <RightTrees focusState={focusState} focusClasses={focusClasses} treesOpen={treesOpen} />
           </ParallaxLayer>
 
           <ParallaxLayer

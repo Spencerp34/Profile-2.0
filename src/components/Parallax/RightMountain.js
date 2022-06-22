@@ -20,7 +20,7 @@ const RightMountain = () =>{
     return(
         <RightMountainDiv>
             <div className="image">
-                <img src={rightMountain} alt="test" />
+                <img src={rightMountain} alt="right-mountain" />
             </div>
 
         </RightMountainDiv>
