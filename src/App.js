@@ -14,8 +14,6 @@ import LeftTrees from "./components/Parallax/LeftTrees";
 import RightTrees from "./components/Parallax/RightTrees";
 import ParallaxStyleDiv from "./components/Parallax/ParallaxStyle";
 
-
-
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
   const [prevFocus, setPrevFocus] = useState();
@@ -40,7 +38,6 @@ function App() {
     setPrevFocus(focusState)
     setFocusState(intiger)
   }
-
 
   useEffect(()=>{
     if(prevFocus === undefined){
@@ -75,7 +72,6 @@ function App() {
               <Stars />
               <Welcome />
           </ParallaxLayer>
-          
           <ParallaxLayer
             offset={0.75}
             factor={0.5}
@@ -109,7 +105,6 @@ function App() {
           >
             <RightMountain />
           </ParallaxLayer>
-
           <ParallaxLayer
             offset={1}
             factor={1}
@@ -118,9 +113,7 @@ function App() {
               backgroundSize: "100%",
               background: `radial-gradient(circle at center bottom, #131321, #131321, ${redSun ? "red" : "#131321"}, #131321, #131321, #131321)`
             }}
-            
           >
-
           </ParallaxLayer>
           <ParallaxLayer
             offset={1.9}
@@ -130,9 +123,7 @@ function App() {
               backgroundSize: "100%",
               background: `#06171C`
             }}
-            
           />
-
           <ParallaxLayer
             offset={1}
             factor={1}
@@ -145,7 +136,6 @@ function App() {
           >
             <LeftTrees focusState={focusState} focusClasses={focusClasses} treesOpen={treesOpen}/>
           </ParallaxLayer>
-        
           <ParallaxLayer
             offset={1.35}
             factor={0.6}
@@ -158,7 +148,6 @@ function App() {
           >
             <RightTrees focusState={focusState} focusClasses={focusClasses} treesOpen={treesOpen} />
           </ParallaxLayer>
-
           <ParallaxLayer
               offset={1.25}
               factor={0.75}
