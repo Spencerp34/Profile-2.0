@@ -14,7 +14,8 @@ const ContentDiv = styled.div`
 
     .project-title{
         bottom: 40%;
-        right: 40%;
+        right: 0%;
+        left: 0%;
         text-align: center;
         letter-spacing: 10px;
         padding-left: 10px;
