@@ -88,7 +88,15 @@ function App() {
           >
             <LeftMountain />
           </ParallaxLayer>
-
+          <ParallaxLayer
+            offset={1}
+            factor={0.15}
+            speed={0.2}
+            style={{
+              backgroundSize: "100%",
+              background: `#000000`
+            }}
+          />
           <ParallaxLayer
             offset={0.9}
             factor={0.6}
@@ -115,17 +123,15 @@ function App() {
 
           </ParallaxLayer>
           <ParallaxLayer
-            offset={1.8}
-            factor={0.2}
+            offset={1.9}
+            factor={0.1}
             speed={0.4}
             style={{
               backgroundSize: "100%",
               background: `#06171C`
             }}
             
-          >
-
-          </ParallaxLayer>
+          />
 
           <ParallaxLayer
             offset={1}
@@ -141,12 +147,13 @@ function App() {
           </ParallaxLayer>
         
           <ParallaxLayer
-            offset={1}
-            factor={1.2}
+            offset={1.35}
+            factor={0.6}
             speed={0.25}
             style={{
               backgroundColor: "transparent",
-              display: "flex",  
+              display: "flex",
+              alignItems: "end",
             }}
           >
             <RightTrees focusState={focusState} focusClasses={focusClasses} treesOpen={treesOpen} />
