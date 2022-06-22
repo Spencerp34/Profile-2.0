@@ -3,7 +3,6 @@ import { useRef, useState, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Stars from "./components/Stars/Stars";
 import Welcome from "./components/Welcome";
-import styled from "styled-components";
 import Content from "./components/Projects/Content";
 import NavigationArrows from "./components/NavigationArrows";
 import Cavewall from "./components/ChalkBoard/Cavewall";
@@ -13,33 +12,9 @@ import LeftMountain from "./components/Parallax/LeftMountain";
 import RightMountain from "./components/Parallax/RightMountain";
 import LeftTrees from "./components/Parallax/LeftTrees";
 import RightTrees from "./components/Parallax/RightTrees";
+import ParallaxStyleDiv from "./components/Parallax/ParallaxStyle";
 
-const ParallaxStyleDiv = styled.div`
-  .no-slide{
-    transition: transform 3s;
-    transform: translate(0%);
-  }
 
-  .slide-left{
-    transition: 3s;
-    transform: translate(-45%, 10%);
-  }
-
-  .slide-right{
-    transition: 2s;
-    transform: translate(20%, 20%);
-  }
-
-  .ultra-right{
-    transition 2s;
-    transform: translateX(100%);
-  }
-
-  .ultra-left{
-    transition 2s;
-    transform: translateX(-100%);
-  }
-`
 
 function App() {
   const [treesOpen, setTreesOpen] = useState(false);
@@ -133,7 +108,19 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: `radial-gradient(${redSun ? "crimson" : "#131321"}, #131321, #131321, #131321)`
+              background: `radial-gradient(circle at center bottom, #131321, #131321, ${redSun ? "red" : "#131321"}, #131321, #131321, #131321)`
+            }}
+            
+          >
+
+          </ParallaxLayer>
+          <ParallaxLayer
+            offset={1.8}
+            factor={0.2}
+            speed={0.4}
+            style={{
+              backgroundSize: "100%",
+              background: `#06171C`
             }}
             
           >
@@ -142,7 +129,7 @@ function App() {
 
           <ParallaxLayer
             offset={1}
-            factor={1.0}
+            factor={1}
             speed={0.15}
             style={{
               backgroundColor: "transparent",
@@ -181,7 +168,6 @@ function App() {
               <NavigationArrows ref={ref} focusState={focusState} changeFocusState={changeFocusState} />
           </ParallaxLayer>
         </ParallaxStyleDiv>
-      
       </Parallax>
     </div>
   );
