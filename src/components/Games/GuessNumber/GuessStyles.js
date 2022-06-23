@@ -38,7 +38,7 @@ const GuessDiv = styled.div`
         border: 1px solid white;
     }
 
-    #correct:hover{
+    #correct:hover, #lets-go:hover{
         color: green;
         border: 1px solid green;
     }

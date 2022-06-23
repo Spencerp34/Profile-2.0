@@ -64,6 +64,19 @@ const AboutDiv = styled.section`
         width: 100%;
     }
 
+    #phone{
+        width: 5vw;
+    }
+    #email{
+        width: 10vw;
+    }
+    #github{
+        width: 8vw;
+    }
+    #linkedIn{
+        width: 7vw;
+    }
+
     .about{
         display: flex;
         flex-direction: column;
@@ -109,6 +122,7 @@ const AboutDiv = styled.section`
     }
     img{
         border-radius: 15px;
+        width: 35vw;
     }
     #spensa,
     #wife
@@ -135,7 +149,6 @@ const AboutDiv = styled.section`
     .image{
         display: flex;
         width: 55%;
-        min-height: 30vh;
         border-radius: 15px;
         background-position: center;
         justify-content: center;
@@ -143,8 +156,31 @@ const AboutDiv = styled.section`
         background-size:contain;
         background-position:center;
     }
+
+    @media (max-width: 1600px){
+        .contact{
+            flex-flow: row wrap;
+        }
+        .mini-contact{
+            width: 40%;
+            height: 15vh;
+        }
+    }
   
     @media (max-width: 750px){
+        .contact{
+            flex-flow: column no-wrap;
+            margin-bottom: 10vh;
+        }
+        .mini-contact{
+            width: 100%;
+            height: 7vh;
+            padding-bottom: 1vh;
+            flex-direction: row;
+        }
+        a{
+            flex-direction: row;
+        }
         hr{
             display: none;
         }

@@ -52,6 +52,7 @@ const GuessNumber = () => {
         setGuesses(6)
         setNumber(50)
         setRange({high: 100, low: 0})
+        setInGame(false)
     }
 
     const handleVictory = () =>{
@@ -81,8 +82,8 @@ const GuessNumber = () => {
                             <div className="cta">
                                 Choose a number between 1 - 100
                             </div>
-                            <p>It should take me less than six guesses</p>
-                            <div className="lets-go-btn" onClick={()=>setInGame(true)} >Lets Go!</div>
+                            <p>It won't take me less than six attempts</p>
+                            <div className="lets-go btn" id="lets-go" onClick={()=>setInGame(true)} >Lets Go!</div>
                             <p>Using O(Log n) algorithm</p>
                         </div>
                 }
