@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Stars from "./components/Stars/Stars";
 import Welcome from "./components/Welcome";
-import Content from "./components/Projects/Content";
+import Content from "./components/Projects/Projects";
 import NavigationArrows from "./components/NavigationArrows";
 import Cavewall from "./components/ChalkBoard/Cavewall";
 import Games from "./components/Games/Games";
@@ -111,7 +111,7 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: `radial-gradient(circle at center bottom, #131321, #131321, ${redSun ? "red" : "#131321"}, #131321, #131321, #131321)`
+              background: `radial-gradient(circle at center bottom, ${redSun ? "red" : "#131321"}, ${redSun ? "red" : "#131321"}, #131321, #131321)`
             }}
           >
           </ParallaxLayer>
@@ -121,7 +121,7 @@ function App() {
             speed={0.4}
             style={{
               backgroundSize: "100%",
-              background: `#06171C`
+              background: `${redSun ? "#06171C" : "#131321"}`
             }}
           />
           <ParallaxLayer

@@ -3,7 +3,7 @@ import {TicTacToeDiv} from "./tttStyle";
 import { checkForWin } from "./outcomes";
 
 
-const TicTacToe = (props) => {
+const TicTacToe = () => {
     const emptyMoves={
         cell1: null,
         cell2: null,
@@ -92,8 +92,9 @@ const TicTacToe = (props) => {
                     <div className={`cell ${moves.cell8}`} onClick={()=>{handleClick(8)}}></div>
                     <div className={`cell ${moves.cell9}`} onClick={()=>{handleClick(9)}}></div>
                 </div>
-                
-                {jsx(winner)}
+                <div className="potential-message">
+                    {jsx(winner)}
+                </div>
             </div>
         </TicTacToeDiv>
     )
