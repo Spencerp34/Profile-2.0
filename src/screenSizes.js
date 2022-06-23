@@ -6,7 +6,7 @@ const LargeScreen = ({children}) => {
 };
 
 const MediumScreen = ({children}) => {
-    const isDesktop = useMediaQuery({ minWidth: 700, maxWidth: 1200 });
+    const isDesktop = useMediaQuery({ minWidth: 751, maxWidth: 1199 });
     return isDesktop ? children : null;
 };
 
