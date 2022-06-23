@@ -23,22 +23,22 @@ const About = (props) =>{
                 </h2>
                 <div className="contact">
                     <div className="phone  mini-contact">
-                        <img src={phone} alt="phone" width={"70px"}/>
+                        <img src={phone} id="phone" alt="phone" />
                         <h4>(925) 915 - 1853</h4>
                     </div>
                     <div className="email mini-contact">
-                        <img src={email} alt="email" width={"100px"} />
+                        <img src={email} id="email" alt="email" />
                         <h4>spencerp34@yahoo.com</h4>
                     </div>
                     <div className="github mini-contact link">
                         <a target="_blank" className='image' href="https://github.com/Spencerp34" rel="noreferrer" >
-                            <img src={github} alt="github" width={"75px"} />
+                            <img src={github} id="github" alt="github" />
                             <h4>spencerp34</h4>
                         </a>
                     </div>
                     <div className="linkedIn mini-contact link">
                         <a target="_blank" className='image' href="https://www.linkedin.com/in/spencerp34/" rel="noreferrer" >
-                            <img src={linkedIn} alt="linkedIn" width={"75px"} />
+                            <img src={linkedIn} id="linkedIn" alt="linkedIn" />
                             <h4>spencerp34</h4>
                         </a>
                     </div>
