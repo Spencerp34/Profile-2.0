@@ -41,17 +41,22 @@ const CavewallDiv = styled.div`
         border-radius: 15px;
     }
 
+    .scroll-lock{
+        touch-action: none;
+    }
+
 `
 
 const position = (focusState)=>{
     if(focusState === 0){
-        return "no-slide"
+        return "no-slide scroll-lock"
     }else if(focusState < 0){
         return "ultra-right"
     }else if(focusState > 0){
         return "ultra-left"
     }
 }
+
 
 const Cavewall = (props) => {
     const {focusState} = props;
