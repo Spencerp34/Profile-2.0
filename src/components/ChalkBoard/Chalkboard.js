@@ -36,7 +36,6 @@ const Chalkboard = () => {
   };
 
   const fullErase = () =>{
-    console.log(lines)
     setLines([])
   }
 
@@ -58,9 +57,9 @@ const Chalkboard = () => {
       <Stage
         width={window.innerWidth * 0.75}
         height={window.innerHeight * 0.8}
-        onMouseDown={handleMouseDown}
-        onMousemove={handleMouseMove}
-        onMouseup={handleMouseUp}
+        onPointerDown={handleMouseDown}
+        onPointermove={handleMouseMove}
+        onPointerup={handleMouseUp}
       >
         <Layer>
           {lines.map((line, i) => (
