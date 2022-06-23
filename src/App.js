@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Stars from "./components/Stars/Stars";
 import Welcome from "./components/Welcome";
@@ -18,8 +18,18 @@ function App() {
   const [treesOpen, setTreesOpen] = useState(false);
   const [prevFocus, setPrevFocus] = useState();
   const [focusState, setFocusState] = useState(1);
-  const ref = useRef();
   const [redSun, setRedSun] = useState(true)
+  const [screenSize, setScreenSize] = useState(window.innerWidth)
+  const ref = useRef();
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setScreenSize(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, [])
 
   const focusClasses = (focusState) => {
     switch (focusState) {
@@ -56,7 +66,7 @@ function App() {
   return (
     <div className="App">
       <Parallax 
-        pages={2}
+        pages={screenSize/960}
         ref={ref}
         >
           <ParallaxStyleDiv>
