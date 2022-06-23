@@ -57,11 +57,11 @@ const Cavewall = (props) => {
     const {focusState} = props;
     return(
         <CavewallDiv>
-            <div className={`Cavewall ${position(focusState)}`}>
+            <section className={`Cavewall ${position(focusState)}`}>
                 <div className='test'>
                     <Chalkboard />
                 </div>
-            </div>  
+            </section>  
         </CavewallDiv>
     )
 }
