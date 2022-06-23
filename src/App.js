@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useState, useEffect, useLayoutEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Stars from "./components/Stars/Stars";
 import Welcome from "./components/Welcome";
@@ -19,17 +19,7 @@ function App() {
   const [prevFocus, setPrevFocus] = useState();
   const [focusState, setFocusState] = useState(1);
   const [redSun, setRedSun] = useState(true)
-  const [screenSize, setScreenSize] = useState(window.innerWidth)
   const ref = useRef();
-
-  useLayoutEffect(() => {
-    function updateSize() {
-      setScreenSize(window.innerWidth);
-    }
-    window.addEventListener('resize', updateSize);
-    updateSize();
-    return () => window.removeEventListener('resize', updateSize);
-  }, [])
 
   const focusClasses = (focusState) => {
     switch (focusState) {
@@ -41,6 +31,36 @@ function App() {
         return "ultra-right"
       default: 
         return "ultra-left"
+    }
+  }
+
+  const blockStartGrey = () => {
+    const screenSize = window.innerWidth
+    if(screenSize < 400 ){
+      return 1.1
+    }else if(screenSize < 650){
+      return 1.075
+    }else if(screenSize < 1500){
+      return 1.05
+    }else if(screenSize < 2000){
+      return 1
+    }else{
+      return 0.995
+    }
+  }
+
+  const blockStartBlack = () => {
+    const screenSize = window.innerWidth
+    if(screenSize < 400 ){
+      return 1.05
+    }else if(screenSize < 650){
+      return 1.03
+    }else if(screenSize < 1500){
+      return 1.01
+    }else if(screenSize < 2000){
+      return 1
+    }else{
+      return 0.995
     }
   }
 
@@ -66,7 +86,7 @@ function App() {
   return (
     <div className="App">
       <Parallax 
-        pages={screenSize/960}
+        pages={2}
         ref={ref}
         >
           <ParallaxStyleDiv>
@@ -95,8 +115,8 @@ function App() {
             <LeftMountain />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={1}
-            factor={0.15}
+            offset={blockStartBlack()}
+            factor={0.5}
             speed={0.2}
             style={{
               backgroundSize: "100%",
@@ -116,7 +136,7 @@ function App() {
             <RightMountain />
           </ParallaxLayer>
           <ParallaxLayer
-            offset={1}
+            offset={blockStartGrey()}
             factor={1}
             speed={0.4}
             style={{
