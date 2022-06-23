@@ -7,15 +7,14 @@ import Details from "./Details";
 export default function DisplayModal(props){
     const [category, setCategory] = useState(0);
     const [opacity, setOpacity] = useState(0)
-    const {setTreesOpen} = props;
+    const {treesOpen, setTreesOpen} = props;
     const closeModal = () => {setTreesOpen(false)}
-    const openModal = () => {setTreesOpen(true)}
 
     setTimeout(() => {setOpacity(1)}, 1000);
 
     return (
         <Modal
-            open={openModal}
+            open={treesOpen}
             onClose={closeModal}
             sx={{
                 position: "absolute",
