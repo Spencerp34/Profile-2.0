@@ -18,16 +18,18 @@ export default function DisplayModal(props){
             open={openModal}
             onClose={closeModal}
             sx={{
-                padding: "5px 8px",
-                marginTop: "15vh",
-                marginLeft: "11vw",
+                position: "absolute",
+                marginTop: "5vh",
                 opacity: opacity,
                 transition: "4s",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
             }}
         >
             <Box
                 sx={{
-                    width: "80%",
+                    width: "70%",
                     height: "70%",
                     borderRadius: "8px",
                     bgcolor: "rgba(196, 196, 196, 0.3)",

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import {TicTacToeDiv} from "./tttStyle";
 import { checkForWin } from "./outcomes";
+import JSConfetti from "js-confetti";
 
 
-const TicTacToe = (props) => {
+const TicTacToe = () => {
     const emptyMoves={
         cell1: null,
         cell2: null,
@@ -18,6 +19,7 @@ const TicTacToe = (props) => {
     const [moves, setMoves] = useState(emptyMoves)
     const [turn, setTurn] = useState("x")
     const [winner, setWinner] = useState(null)
+    const jsConfettiThrow = new JSConfetti();
 
     const jsx = (winnerState) =>{
         if(winnerState === "x"){
@@ -58,11 +60,14 @@ const TicTacToe = (props) => {
         const winCheck =  checkForWin(moves)
         if(winCheck === "x"){
             setWinner("x")
+            jsConfettiThrow.addConfetti()
         }else if (winCheck === "o"){
             setWinner("o")
+            jsConfettiThrow.addConfetti()
         }else if(winCheck === "draw"){
             setWinner("draw")
         }
+        // eslint-disable-next-line
     }, [moves])
 
     const handleClick = (cellnumber) => {
@@ -92,8 +97,9 @@ const TicTacToe = (props) => {
                     <div className={`cell ${moves.cell8}`} onClick={()=>{handleClick(8)}}></div>
                     <div className={`cell ${moves.cell9}`} onClick={()=>{handleClick(9)}}></div>
                 </div>
-                
-                {jsx(winner)}
+                <div className="potential-message">
+                    {jsx(winner)}
+                </div>
             </div>
         </TicTacToeDiv>
     )

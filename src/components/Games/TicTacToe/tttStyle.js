@@ -78,18 +78,23 @@ const TicTacToeDiv = styled.div`
             background-color: lightgrey;
         }
 
+        .potential-message{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .winningMessage{
-            position: fixed;
-            top: -35%;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            position: absolute;
+            height: 150vh;
+            width: 150vw;
             background-color: rgba(0, 0, 0, .8);
             justify-content: center;
             align-items: center;
             color: white;
             font-size: 5rem;
             flex-direction: column;
+            margin-bottom: 50vh;
         }
         .winningMessage button {
             font-size: 3rem;
