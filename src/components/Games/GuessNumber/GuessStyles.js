@@ -13,7 +13,7 @@ const GuessDiv = styled.div`
         justify-content: space-evenly;
         align-items: center;
     }    
-    .lets-go-btn{
+    .btn {
         padding: 10px;
         border: 1px solid black;
         border-radius: 5px;
@@ -21,12 +21,9 @@ const GuessDiv = styled.div`
         width: 60%;
         transition: .3s;
     }
-    .lets-go-btn:hover{
-        color: white;
-        border: 1px solid white;
-    }
-    span{
-        color: tomato;
+    .go-back:hover{
+        color: grey;
+        border: 1px solid grey;
     }
     .in-game{
         display: flex;
@@ -34,6 +31,21 @@ const GuessDiv = styled.div`
         justify-content: space-evenly;
         align-items: center;
         height: 60vh;
+    }
+
+    #correct{
+        color: white;
+        border: 1px solid white;
+    }
+
+    #correct:hover{
+        color: green;
+        border: 1px solid green;
+    }
+
+    .more:hover, .less:hover{
+        color: white;
+        border: 1px solid white;
     }
 `
 
